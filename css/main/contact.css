@@ -1,0 +1,11 @@
+.cv__main__contact__wrap {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.cv__main__contact__wrap__card {
+    width: 320px;
+    height: 100px;
+    border: 2px dotted var(--mainColorDark);
+    border-radius: 8px;
+}

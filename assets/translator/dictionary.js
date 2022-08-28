@@ -10,6 +10,10 @@ const dictionary = {
         }
     },
     NAV: {
+        CONTACT: {
+            en: 'contact',
+            ru: 'Контакты'
+        },
         ABOUT: {
             en: 'about',
             ru: 'обо мне',
@@ -34,6 +38,12 @@ const dictionary = {
             en: 'languages',
             ru: 'языки'
         }
+    },
+    MAIN: {
+        ABOUT_ME: {
+            en: 'Briefly About Myself:',
+            ru: 'Кратко о себе:'
+        },
     }
 };
 
