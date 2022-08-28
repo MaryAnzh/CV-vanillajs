@@ -2,6 +2,7 @@
     width: 100%;
     height: 80px;
     display: flex;
+    justify-content: center;
     padding: 0 20px;
     background: linear-gradient(to left, var(--gradientLight), var(--gradientDark));
 }
@@ -37,6 +38,7 @@
 .cv__header__wrap__icon__name {
     padding-left: 10px;
     line-height: 1.1;
+    font-size: 22px;
     color: #ffffff;
 }
 
