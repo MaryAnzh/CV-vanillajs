@@ -1,0 +1,39 @@
+.cv__nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to left, var(--gradientLight), var(--gradientDark));
+
+}
+
+.cv__nav__listitem {
+    max-width: 1200px;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cv__nav__listitem__item {
+    width: 125px;
+    padding: 0 5px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px dotted #ffffff;
+    border-radius: 5px;
+    background: var(--mainColorDark);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cv__nav__listitem__item:hover {
+    border-color: none;
+    background: var(--mainColorDark2);
+}
