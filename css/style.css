@@ -1,0 +1,67 @@
+@import 'reset.css';
+@import 'var.css';
+@import 'header.css';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+    scroll-behavior: smooth;
+}
+
+section {
+    width: 100%;
+    min-height: 200px;
+    padding: 0 20px;
+    height: fit-content;
+}
+
+section:nth-child(2n) {
+    background: #BFD2F6;
+}
+
+.cv {
+    width: 100%;
+    font-family: 'Roboto';
+    font-weight: 100;
+    color: var(--mainColorFont);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $mainColor;
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 46px;
+    font-weight: 200;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 200;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.cv__main {
+    width: 100%;
+}

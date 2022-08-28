@@ -1,0 +1,21 @@
+:root {
+    --mainColor: #B1DCFA;
+    --mainColorDark2: #84c1ec;
+    --mainColorDark: #3A77A2;
+    --mainColorFont: #3C3EA3;
+    --mainColorLight: #C5E6FC;
+    --mainColorLight2: #D4ECFC;
+    --mainColorLight3: #F6FBFE;
+
+    --gradientDark: #0f1cd6;
+    --gradientLight: #F6FBFE;
+
+    --additionalColor: #9798BC;
+    --additionalColorLight: #D8D9FD;
+    --additionalDark: #3C3EA3;
+
+    --contrastColor: #BFAC93;
+    --contrastColorDark: #A67639;
+    --contrastColorLight: #FFE5C4;
+    --contrastColorLight2: #FFECD3;
+}
