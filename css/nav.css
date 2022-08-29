@@ -7,6 +7,10 @@
 
 }
 
+.cv__nav__burger {
+    display: none;
+}
+
 .cv__nav__listitem {
     max-width: 1200px;
     width: 100%;
@@ -36,4 +40,95 @@
 .cv__nav__listitem__item:hover {
     border-color: none;
     background: var(--mainColorDark2);
+}
+
+.cv__nav__burger-list__list {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    .cv__nav {
+        padding: 0 20px;
+        justify-content: flex-end;
+    }
+
+    .cv__nav__listitem {
+        display: none;
+    }
+
+    .cv__nav__burger {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid var(--mainColorDark);
+        border-radius: 6px;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .line {
+        width: 30px;
+        height: 3px;
+        position: absolute;
+        border-radius: 2px;
+        background: var(--mainColorDark);
+        transition: .3s;
+    }
+
+    .line:nth-child(1) {
+        top: 8px;
+    }
+
+    .line:nth-child(2) {
+        top: 23.5px;
+    }
+
+    .line:nth-child(3) {
+        bottom: 8px;
+    }
+
+    .cv__nav__burger:hover {
+        background: var(--mainColor);
+    }
+
+    .cv__nav__burger-list {
+        position: absolute;
+        width: 120px;
+        height: 190px;
+        display: block;
+        margin-top: 50px;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .cv__nav__burger-list__list {
+        display: block;
+        transform: translate(0px, -190px);
+        border: 1px solid var(--mainColor);
+        border-radius: 8px;
+        transition: .3s;
+    }
+
+    .cv__nav__burger-list__list li {
+        padding: 0 5px;
+        text-transform: uppercase;
+        text-align: right;
+        cursor: pointer;
+        border: 1px solid #ffffff;
+        border-radius: 4px;
+        transition: .3s;
+    }
+
+    .cv__nav__burger-list__list li:nth-child(2n) {
+        background: var(--mainColor);
+        border-color: var(--mainColor);
+    }
+
+    .cv__nav__burger-list__list li:hover {
+        border: 2px solid var(--mainColorDark);
+    }
 }
