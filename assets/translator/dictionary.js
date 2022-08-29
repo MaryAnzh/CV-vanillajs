@@ -44,6 +44,24 @@ const dictionary = {
             en: 'Briefly About Myself:',
             ru: 'Кратко о себе:'
         },
+    },
+    CONTACTS: {
+        TITLE: {
+            en: 'contact',
+            ru: 'Контакты'
+        },
+        PHON: {
+            en: 'phon',
+            ru: 'телефон',
+        },
+        MAIL: {
+            en: 'mail',
+            ru: 'почта',
+        },
+        "MESSENGERS": {
+            en: 'messengers',
+            ru: 'мессенджеры',
+        },
     }
 };
 

@@ -3,9 +3,25 @@
     width: 100%;
 }
 
-.cv__main__contact__wrap__card {
+.cv__main__contact__wrap__cards-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv__main__contact__wrap__cards-wrap__card {
     width: 320px;
     height: 100px;
+    padding: 0 10px;
     border: 2px dotted var(--mainColorDark);
     border-radius: 8px;
+    line-height: 1.3;
+}
+
+.cv__main__contact__wrap__cards-wrap__card__title {
+    padding-bottom: 5px;
+}
+
+.cv__main__contact__wrap__cards-wrap__card__title::first-letter {
+    text-transform: uppercase;
 }
