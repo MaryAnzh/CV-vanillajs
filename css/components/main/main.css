@@ -16,7 +16,7 @@ section {
 }
 
 section:nth-child(2n) {
-    background: #BFD2F6;
+    background: var(--mainColorLight2);
 }
 
 section h3 {
