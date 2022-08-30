@@ -1,0 +1,44 @@
+.cv__footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--mainColorDark);
+
+}
+
+.cv__footer__wrap {
+    max-width: 1200px;
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.cv__footer__wrap__gh-link {
+    height: 50px;
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    color: #ffffff;
+}
+
+.cv__footer__wrap__gh-link:hover {
+    color: var(--mainColorLight);
+}
+
+.cv__footer__wrap__gh-link:hover svg{
+    fill: var(--mainColorLight);
+}
+
+.cv__footer__wrap__gh-link__gh-logo {
+    width: 50px;
+    height: 50px;
+    fill: #ffffff;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .3s;
+}

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>CV</title>
+		<title>CV in vanillajs</title>
 		<link rel="stylesheet" href="css/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/png" href="fav.png">
@@ -77,14 +77,25 @@
 
 			<!-- skill -->
 			<section class="cv__main__skill">
+				<h3 class="translator"
+					data-translat="SKILL.TITLE">
+				</h3>
 				<ul class="cv__main__skill__list">
 					<li class="cv__main__skill__list__item"></li>
 				</ul>
 			</section>
 
+			<section class="cv__main__projects">
+				<h3 class="translator"
+					data-translat="PROJECTS.TITLE">
+				</h3>
+			</section>
+
 			<!-- code -->
 			<section class="cv__main__code">
-				<h3 class="cv__main__code__title"></h3>
+				<h3 class="translator"
+					data-translat="CODE.TITLE">
+				</h3>
 				<p class="cv__main__code__description"></p>
 				<div class="cv__main__code__example">
 					<pre><code></code></pre>
@@ -93,6 +104,9 @@
 
 			<!-- education -->
 			<section class="cv__main__education">
+				<h3 class="translator"
+					data-translat="EDUCATION.TITLE">
+				</h3>
 				<ul class="cv__main__education__list">
 					<li class="cv__main__education__list__hight"></li>
 					<li class="cv__main__education__list__courses">
@@ -105,13 +119,56 @@
 
 			<!-- languages -->
 			<section class="cv__main__languages">
+				<h3 class="translator"
+					data-translat="LANGUAGES.TITLE">
+				</h3>
 				<ul class="cv__main__languages__list">
 					<li class="cv__main__languages__list__language"></li>
 				</ul>
 			</section>
 		</main>
 
-		<footer class="cv__footer"></footer>
-		<script src="index.js" type="module"></script>
-	</body>
-</html>
+		<footer class="cv__footer">
+			<div class="cv__footer__wrap">
+				<p>&#169 2022</p>
+				<!-- <div class="cv__footer__wrap__gh-link"> -->
+				<a class="cv__footer__wrap__gh-link"
+					href="https://github.com/MaryAnzh" target="_blank">
+					<svg
+						class="cv__footer__wrap__gh-link__gh-logo"
+						viewBox="0 0 50 50">
+						<path
+							d="M44.64,0H5.36C2.4,0,0,2.4,0,5.36v39.29C0,47.6,2.4,50,5.36,50h39.29C47.6,50,50,47.6,50,44.64
+							V5.36C50,2.4,47.6,0,44.64,0z
+							M30.95,42.82c-0.94,0.17-1.28-0.41-1.28-0.89c0-0.6,0.02-3.68,0.02-6.17c0-1.74-0.58-2.85-1.26-3.43
+							c4.13-0.46,8.48-1.03,8.48-8.16c0-2.03-0.73-3.05-1.91-4.35c0.19-0.48,0.83-2.46-0.19-5.02c-1.55-0.48-5.1,2-5.1,2
+							c-1.47-0.41-3.07-0.62-4.64-0.62s-3.17,0.21-4.64,0.62c0,0-3.55-2.48-5.1-2c-1.02,2.56-0.39,4.53-0.19,5.02
+							c-1.18,1.31-1.74,2.32-1.74,4.35c0,7.1,4.16,7.7,8.29,8.16c-0.54,0.48-1.02,1.31-1.18,2.49c-1.06,0.48-3.77,1.31-5.39-1.55
+							c-1.02-1.76-2.85-1.91-2.85-1.91c-1.81-0.02-0.12,1.14-0.12,1.14c1.21,0.56,2.05,2.7,2.05,2.7c1.08,3.31,6.26,2.2,6.26,2.2
+							c0,1.55,0.02,4.07,0.02,4.53c0,0.48-0.33,1.06-1.28,0.89c-7.37-2.47-12.52-9.48-12.52-17.67c0-10.25,7.83-18.02,18.08-18.02
+							S43.3,14.91,43.3,25.16C43.31,33.35,38.32,40.37,30.95,42.82C30.95,42.82,30.95,42.82,30.95,42.82z
+							M20,36
+							c-0.21,0.04-0.41-0.04-0.44-0.19c-0.02-0.17,0.12-0.31,0.33-0.36c0.21-0.02,0.41,0.07,0.44,0.21C20.37,35.81,20.22,35.96,20,36
+							L20,36z
+							M18.94,35.9c0,0.15-0.17,0.27-0.39,0.27c-0.25,0.02-0.41-0.1-0.41-0.27c0-0.15,0.17-0.27,0.39-0.27
+							C18.74,35.61,18.94,35.74,18.94,35.9z
+							M17.41,35.78c-0.04,0.15-0.27,0.21-0.46,0.15c-0.21-0.04-0.36-0.21-0.31-0.36
+							s0.27-0.21,0.46-0.17C17.32,35.47,17.47,35.64,17.41,35.78z
+							M16.04,35.18c-0.1,0.12-0.31,0.1-0.48-0.07
+							c-0.17-0.15-0.21-0.36-0.1-0.46c0.1-0.12,0.31-0.1,0.48,0.07C16.08,34.87,16.14,35.09,16.04,35.18z
+							M15.02,34.16
+							c-0.1,0.07-0.29,0-0.41-0.17c-0.12-0.17-0.12-0.36,0-0.44c0.12-0.1,0.31-0.02,0.41,0.15C15.14,33.87,15.14,34.07,15.02,34.16z
+							M14.3,33.08c-0.1,0.1-0.27,0.04-0.39-0.07c-0.12-0.15-0.15-0.31-0.04-0.39c0.1-0.1,0.27-0.04,0.39,0.07
+							C14.38,32.84,14.4,33,14.3,33.08z
+							M13.55,32.25c-0.04,0.1-0.19,0.12-0.31,0.04c-0.15-0.07-0.21-0.19-0.17-0.29
+							c0.04-0.07,0.17-0.1,0.31-0.04C13.53,32.04,13.59,32.16,13.55,32.25z" />
+						</svg>
+						<p>MaryAnzh</p>
+					</a>
+					<!-- </div> -->
+
+				</div>
+			</footer>
+			<script src="index.js" type="module"></script>
+		</body>
+	</html>

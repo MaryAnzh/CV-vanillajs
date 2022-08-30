@@ -1,9 +1,10 @@
 @import 'reset.css';
 @import 'var.css';
-@import 'header.css';
-@import 'nav.css';
-@import 'main/main.css';
-@import 'main/contact.css';
+@import 'components/header.css';
+@import 'components/nav.css';
+@import 'components/main/main.css';
+@import 'components/main/contact.css';
+@import 'components/footer.css';
 
 * {
     box-sizing: border-box;
