@@ -1,0 +1,20 @@
+.cv__main__skill__wrap {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.cv__main__skill__wrap__lists {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv__main__skill__wrap__lists__texst-list {
+    list-style: circle;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px dotted var(--mainColor);
+    border-radius: 10px;
+}
+
+.cv__main__skill__wrap__lists__icons-list {}
