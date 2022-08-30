@@ -75,6 +75,16 @@ class Burger {
             this.closeBurger();
         }
     }
+
+    scroll(e) {
+        const position = window.scrollY;
+        if (position > 0) {
+            this.burgerWrap.classList.add('sticky-burger')
+            
+        } else {
+            this.burgerWrap.classList.remove('sticky-burger')
+        }
+    }
 }
 
 const burger = new Burger();
@@ -82,3 +92,4 @@ burger.createBurgerListUl();
 
 burger.burgerWrap.addEventListener('click', (e) => burger.burgerOnClick(e));
 window.addEventListener('click', (e) => burger.click(e));
+window.addEventListener('scroll', (e) => burger.scroll(e));

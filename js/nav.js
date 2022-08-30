@@ -1,5 +1,5 @@
 class Nav {
-    nwv = document.querySelector('#nav');
+    nav = document.querySelector('#nav');
     navList = [
         'about',
         'skill',
@@ -17,12 +17,23 @@ class Nav {
             const a = document.createElement('a');
             li.classList.add('translator', 'cv__nav__listitem__item');
             li.setAttribute('data-translat', `NAV.${elem.toUpperCase()}`);
-            a.setAttribute('href', `#${elem}` );
+            a.setAttribute('href', `#${elem}`);
             a.appendChild(li);
-            this.nwv.appendChild(a);
+            this.nav.appendChild(a);
         });
+    }
+
+    scroll(e) {
+        const position = window.scrollY;
+        if (position >= 100) {
+            this.nav.classList.add('sticky-menu');
+        } else {
+            this.nav.classList.remove('sticky-menu');
+        }
     }
 }
 
 const nav = new Nav();
 nav.createNavList();
+
+window.addEventListener('scroll', (e) => nav.scroll(e));
