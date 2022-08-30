@@ -62,6 +62,36 @@ const dictionary = {
             en: 'messengers',
             ru: 'мессенджеры',
         },
+    },
+    SKILL: {
+        TITLE: {
+            en: 'skill',
+            ru: 'навыки',
+        }
+    },
+    PROJECTS: {
+        TITLE: {
+            en: 'projects',
+            ru: "проекты"
+        }
+    },
+    CODE: {
+        TITLE: {
+            en: 'code',
+            ru: 'код',
+        }
+    },
+    EDUCATION: {
+        TITLE: {
+            en: 'education',
+            ru: 'образование',
+        },
+    },
+    LANGUAGES: {
+        TITLE: {
+            en: 'languages',
+            ru: 'языки',
+        },
     }
 };
 
