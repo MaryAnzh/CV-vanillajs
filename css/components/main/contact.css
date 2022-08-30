@@ -1,6 +1,7 @@
 .cv__main__contact__wrap {
     max-width: 1200px;
     width: 100%;
+    padding-bottom: 20px;
 }
 
 .cv__main__contact__wrap__cards-wrap {
@@ -33,7 +34,6 @@
     .cv__main__contact__wrap__cards-wrap {
         flex-wrap: wrap;
         gap: 10px;
-        padding-bottom: 10px;
     }
 
     .cv__main__contact__wrap__cards-wrap__card {

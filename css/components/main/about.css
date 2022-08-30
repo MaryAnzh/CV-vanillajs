@@ -1,0 +1,15 @@
+.cv__main__about__wrap {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cv__main__about__me {
+    width: 500px;
+    height: 250px;
+    border: 2px dotted var(--mainColorDark);
+    border-radius: 10px;
+    background: #ffffff;
+}

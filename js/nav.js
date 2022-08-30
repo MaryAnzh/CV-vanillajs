@@ -14,9 +14,12 @@ class Nav {
     createNavList() {
         this.navList.forEach((elem) => {
             const li = document.createElement('li');
+            const a = document.createElement('a');
             li.classList.add('translator', 'cv__nav__listitem__item');
             li.setAttribute('data-translat', `NAV.${elem.toUpperCase()}`);
-            this.nwv.appendChild(li);
+            a.setAttribute('href', `#${elem}` );
+            a.appendChild(li);
+            this.nwv.appendChild(a);
         });
     }
 }

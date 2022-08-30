@@ -26,9 +26,12 @@ class Burger {
     createBurgerListUl() {
         this.navList.forEach((elem) => {
             const li = document.createElement('li');
-            li.classList.add('translator');
+            const a = document.createElement('a');
+            li.classList.add('translator', 'cv__nav__listitem__item');
             li.setAttribute('data-translat', `NAV.${elem.toUpperCase()}`);
-            this.navListUl.appendChild(li);
+            a.setAttribute('href', `#${elem}`);
+            a.appendChild(li);
+            this.navListUl.appendChild(a);
         });
         this.burgerList.appendChild(this.navListUl);
     }
@@ -63,10 +66,19 @@ class Burger {
             this.closeBurger();
         }
     }
+
+    click(e) {
+        const elem = e.target;
+        console.log(elem);
+        const elemClasses = Array.from(elem.classList);
+        if (elemClasses.indexOf('burger') === -1 && this.isBurgerOpen) {
+            this.closeBurger();
+        }
+    }
 }
 
 const burger = new Burger();
 burger.createBurgerListUl();
 
 burger.burgerWrap.addEventListener('click', (e) => burger.burgerOnClick(e));
-//window.addEventListener('click',);
+window.addEventListener('click', (e) => burger.click(e));
