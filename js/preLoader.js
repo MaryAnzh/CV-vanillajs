@@ -7,8 +7,10 @@ class PreLoader {
         setTimeout(() => {
             this.preloaderHTML.style.transition = '.3s';
             this.preloaderHTML.style.opacity = '0';
-        }, 500)
-        setTimeout(() => this.preloaderHTML.style.display = 'npne', 800);
+        }, 500);
+        setTimeout(() => {
+            this.preloaderHTML.style.display = 'none';;
+        }, 800);
     }
 }
 
