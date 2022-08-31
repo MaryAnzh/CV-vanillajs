@@ -1,6 +1,8 @@
 class Projects {
     slider_HTMLElem = document.querySelector('.cv__main__projects__wrap__slider-wrap__slider');
-    sliderItems = [
+    projectsList_HTMLElem = document.querySelector('.cv__main__projects__wrap__list-wrap__list');
+
+    projects = [
         {
             name: 'project-management-app',
             src: 'project-management-app.png',
@@ -19,18 +21,16 @@ class Projects {
         },
     ];
 
-    currentShowList = [];
-
     constructor() {
         this.currentShowList = [
-            this.sliderItems[0],
-            this.sliderItems[1],
+            this.projects[0],
+            this.projects[1],
         ];
     }
 
     createSliderItem() {
         let htmlNodes = '';
-        this.sliderItems.forEach((elem) => {
+        this.projects.forEach((elem) => {
             const htmlElem =
                 `<div class="cv__main__projects__wrap__slider-wrap__slider__item">
             <img
@@ -43,7 +43,16 @@ class Projects {
         });
         this.slider_HTMLElem.innerHTML = htmlNodes;
     }
+
+    createProjectsList() {
+        this.projects.forEach((proj) => {
+            const li = document.createElement('li');
+            li.textContent = proj.name;
+            this.projectsList_HTMLElem.appendChild(li);
+        });
+    }
 }
 
 const projects = new Projects();
 projects.createSliderItem();
+projects.createProjectsList();

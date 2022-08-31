@@ -54,9 +54,10 @@
 
 .cv__main__projects__wrap__slider-wrap__slider {
     position: absolute;
-    width: 213%;
+    width: 200%;
     display: flex;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .cv__main__projects__wrap__slider-wrap__slider__item {
@@ -77,4 +78,18 @@
     margin-top: 10px;
     text-align: center;
     font-weight: bold;
+}
+
+.cv__main__projects__wrap__list-wrap {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.cv__main__projects__wrap__list-wrap__list {
+    list-style: decimal;
+}
+
+.cv__main__projects__wrap__list-wrap__list li {
+    padding-left: 20px;
+    font-size: 20px;
 }

@@ -91,7 +91,11 @@ const dictionary = {
         TITLE: {
             en: 'projects',
             ru: "проекты"
-        }
+        },
+        LIST: {
+            en: 'Projects list',
+            ru: 'Список проектов',
+        },
     },
     CODE: {
         TITLE: {
