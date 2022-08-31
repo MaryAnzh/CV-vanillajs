@@ -5,5 +5,6 @@ import './js/contacts.js';
 import './js/burger.js';
 import './js/aboutMe.js';
 import './js/skill.js';
+import './js/projects.js';
 import './js/translator.js';
 import './js/preLoader.js';
