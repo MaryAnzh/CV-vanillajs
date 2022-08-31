@@ -1,15 +1,17 @@
 class Burger {
-    burgerWrap;
-    burgerLines;
-    burgerList;
-    isBurgerOpen;
-    navList;
-    navListUl;
+
+    burgerIcon_HTMLElrm = document.querySelector('#burger');
+    burgerList_HTMLElem = document.querySelector('.cv__nav__burger-list');
+    burgerLines_HTMLNodes = [];
+
+    navList = [];
+
+    isBurgerOpen = false;
+
+    navListUl_HTMLElem;
 
     constructor() {
-        this.burgerWrap = document.querySelector('#burger');
-        this.burgerLines = this.burgerWrap.children;
-        this.burgerList = document.querySelector('.cv__nav__burger-list');
+        this.burgerLines_HTMLNodes = this.burgerIcon_HTMLElrm.children;
         this.navList = [
             'about',
             'skill',
@@ -18,12 +20,11 @@ class Burger {
             'education',
             'languages'
         ];
-        this.isBurgerOpen = false;
-        this.navListUl = document.createElement('ul');
-        this.navListUl.classList.add('cv__nav__burger-list__list');
+        this.navListUl_HTMLElem = document.createElement('ul');
+        this.navListUl_HTMLElem.classList.add('cv__nav__burger-list__list');
     }
 
-    createBurgerListUl() {
+    createburgerList_HTMLElemUl() {
         this.navList.forEach((elem) => {
             const li = document.createElement('li');
             const a = document.createElement('a');
@@ -31,30 +32,30 @@ class Burger {
             li.setAttribute('data-translat', `NAV.${elem.toUpperCase()}`);
             a.setAttribute('href', `#${elem}`);
             a.appendChild(li);
-            this.navListUl.appendChild(a);
+            this.navListUl_HTMLElem.appendChild(a);
         });
-        this.burgerList.appendChild(this.navListUl);
+        this.burgerList_HTMLElem.appendChild(this.navListUl_HTMLElem);
     }
 
     ooenBurger() {
-        this.burgerWrap.style.borderRadius = '50%';
-        this.burgerLines[1].style.opacity = '0';
-        this.burgerLines[0].style.top = '21.5px';
-        this.burgerLines[0].style.transform = 'rotate(.125turn)';
-        this.burgerLines[2].style.bottom = '21.5px';
-        this.burgerLines[2].style.transform = 'rotate(-.125turn)';
-        this.navListUl.style.transform = 'translate(0px, 0px)';
+        this.burgerIcon_HTMLElrm.style.borderRadius = '50%';
+        this.burgerLines_HTMLNodes[1].style.opacity = '0';
+        this.burgerLines_HTMLNodes[0].style.top = '21.5px';
+        this.burgerLines_HTMLNodes[0].style.transform = 'rotate(.125turn)';
+        this.burgerLines_HTMLNodes[2].style.bottom = '21.5px';
+        this.burgerLines_HTMLNodes[2].style.transform = 'rotate(-.125turn)';
+        this.navListUl_HTMLElem.style.transform = 'translate(0px, 0px)';
         this.isBurgerOpen = true;
     }
 
     closeBurger() {
-        this.burgerWrap.style.borderRadius = '2px';
-        this.burgerLines[1].style.opacity = '1';
-        this.burgerLines[0].style.top = '8px';
-        this.burgerLines[0].style.transform = 'rotate(0)';
-        this.burgerLines[2].style.bottom = '8px';
-        this.burgerLines[2].style.transform = 'rotate(0)';
-        this.navListUl.style.transform = 'translate(0px, -190px)';
+        this.burgerIcon_HTMLElrm.style.borderRadius = '2px';
+        this.burgerLines_HTMLNodes[1].style.opacity = '1';
+        this.burgerLines_HTMLNodes[0].style.top = '8px';
+        this.burgerLines_HTMLNodes[0].style.transform = 'rotate(0)';
+        this.burgerLines_HTMLNodes[2].style.bottom = '8px';
+        this.burgerLines_HTMLNodes[2].style.transform = 'rotate(0)';
+        this.navListUl_HTMLElem.style.transform = 'translate(0px, -190px)';
         this.isBurgerOpen = false;
     }
 
@@ -69,7 +70,6 @@ class Burger {
 
     click(e) {
         const elem = e.target;
-        console.log(elem);
         const elemClasses = Array.from(elem.classList);
         if (elemClasses.indexOf('burger') === -1 && this.isBurgerOpen) {
             this.closeBurger();
@@ -79,17 +79,18 @@ class Burger {
     scroll(e) {
         const position = window.scrollY;
         if (position > 0) {
-            this.burgerWrap.classList.add('sticky-burger')
-            
+            this.burgerIcon_HTMLElrm.classList.add('sticky-burger');
+            this.burgerList_HTMLElem.classList.add('sticky-burge-list');
         } else {
-            this.burgerWrap.classList.remove('sticky-burger')
+            this.burgerIcon_HTMLElrm.classList.remove('sticky-burger');
+            this.burgerList_HTMLElem.classList.remove('sticky-burge-list');
         }
     }
 }
 
 const burger = new Burger();
-burger.createBurgerListUl();
+burger.createburgerList_HTMLElemUl();
 
-burger.burgerWrap.addEventListener('click', (e) => burger.burgerOnClick(e));
+burger.burgerIcon_HTMLElrm.addEventListener('click', (e) => burger.burgerOnClick(e));
 window.addEventListener('click', (e) => burger.click(e));
 window.addEventListener('scroll', (e) => burger.scroll(e));
