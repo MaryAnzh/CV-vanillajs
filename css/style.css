@@ -4,6 +4,7 @@
 @import 'components/nav.css';
 @import 'components/main/main.css';
 @import 'components/footer.css';
+@import 'components/preloader.css';
 
 * {
     box-sizing: border-box;

@@ -6,3 +6,4 @@ import './js/burger.js';
 import './js/aboutMe.js';
 import './js/skill.js';
 import './js/translator.js';
+import './js/preLoader.js';
