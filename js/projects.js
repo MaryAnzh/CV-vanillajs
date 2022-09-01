@@ -29,12 +29,14 @@ class Projects {
     ];
 
     projectsLenth = this.projects.length;
+    miniSliderScreenWidth = 1150;
+    windowInnerWidth = window.innerWidth;
+    currwntViewItem = this.windowInnerWidth > this.miniSliderScreenWidth ? 2 : 1;
+
+    shiftCountMin = 0;
+    shiftCountMax = this.projectsLenth - this.currwntViewItem;
 
     shiftCount = 0;
-    shiftCountMin = 0;
-    currwntViewItem = this.windowInnerWidth > 1200 ? 2 : 1;
-    shiftCountMax = this.projectsLenth - this.currwntViewItem;
-    shiftSize = this.sliderWidth / this.projectsLenth;
     currentShift = 0;
 
 
@@ -64,6 +66,7 @@ class Projects {
             // </div>
             htmlNodes += htmlElem;
         });
+
         this.slider_HTMLElem.innerHTML = htmlNodes;
     }
 
@@ -79,11 +82,14 @@ class Projects {
         const arrow = e.target;
         const type = arrow.dataset.type;
 
+        const items = document.querySelectorAll('.cv__main__projects__wrap__slider-wrap__slider__item');
+        const itemWidth = items[0].clientWidth;
+
+        console.log(itemWidth);
         if (type === 'left') {
             this.shiftCount++;
-            this.currentShift -= this.shiftSize;
-            console.log('shiftCount');
-            console.log(this.shiftCount);
+            this.currentShift -= itemWidth;
+
             if (this.shiftCount === this.shiftCountMax) {
                 this.leftSloderArroy_HTMLElem.classList.add('arrow-block');
             }
@@ -94,7 +100,7 @@ class Projects {
         }
         if (type === 'right') {
             this.shiftCount--;
-            this.currentShift += this.shiftSize;
+            this.currentShift += itemWidth;
 
             if (this.shiftCount === this.shiftCountMin) {
                 this.rightSloderArroy_HTMLElem.classList.add('arrow-block');
@@ -104,10 +110,12 @@ class Projects {
             }
         }
 
-        this.slider_HTMLElem.style.marginLeft = `${this.currentShift}%`
-
+        console.log('this.currentShift');
+        console.log(this.currentShift);
+        items.forEach((elem) => {
+            elem.style.transform = `translate(${this.currentShift}px, 0px)`;
+        });
     }
-
 }
 
 const projects = new Projects();
