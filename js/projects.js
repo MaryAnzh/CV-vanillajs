@@ -1,5 +1,6 @@
 class Projects {
     slider_HTMLElem = document.querySelector('.cv__main__projects__wrap__slider-wrap__slider');
+    sliderItem__ = document.querySelector('.cv__main__projects__wrap__slider-wrap__slider__item');
     projectsList_HTMLElem = document.querySelector('.cv__main__projects__wrap__list-wrap__list');
     leftSloderArroy_HTMLElem = document.querySelector('#leftSliderArroy');
     rightSloderArroy_HTMLElem = document.querySelector('#rightSliderArroy');
@@ -21,15 +22,19 @@ class Projects {
             name: 'project-management-app',
             src: 'project-management-app-2.png',
         },
+        {
+            name: 'project-management-app',
+            src: 'project-management-app.png',
+        },
     ];
 
     projectsLenth = this.projects.length;
 
-    sliderWidth = 50 * this.projectsLenth;
     shiftCount = 0;
     shiftCountMin = 0;
-    shiftCountMax = this.projectsLenth - 2;
-    shiftSize = 200 / this.projectsLenth;
+    currwntViewItem = this.windowInnerWidth > 1200 ? 2 : 1;
+    shiftCountMax = this.projectsLenth - this.currwntViewItem;
+    shiftSize = this.sliderWidth / this.projectsLenth;
     currentShift = 0;
 
 
@@ -49,16 +54,16 @@ class Projects {
         let htmlNodes = '';
         this.projects.forEach((elem) => {
             const htmlElem =
-                `<div class="cv__main__projects__wrap__slider-wrap__slider__item">
-            <img
-                class="cv__main__projects__wrap__slider-wrap__slider__item__img"
-                src="/assets/projects/${elem.src}"
-                alt="${elem.name}">
-            <p class="cv__main__projects__wrap__slider-wrap__slider__item__title">${elem.name}</p>
-        </div>`;
+                `<div class="cv__main__projects__wrap__slider-wrap__slider__item"></div>`;
+            // <div class="cv__main__projects__wrap__slider-wrap__slider__item__item-view">
+            //     <img
+            //     class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__img"
+            //     src="/assets/projects/${elem.src}"
+            //     alt="${elem.name}">
+            //     <p class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__title">${elem.name}</p>
+            // </div>
             htmlNodes += htmlElem;
         });
-        this.slider_HTMLElem.style.width = `${this.sliderWidth}%`;
         this.slider_HTMLElem.innerHTML = htmlNodes;
     }
 
