@@ -22,8 +22,19 @@ class Projects {
             name: 'christmas-task (js, ts, webpack)',
             src: 'christmas-task.png',
             urlDeploy: 'https://maryanzh.github.io/christmas-task/',
-            urlRepo: 'https://github.com/MaryAnzh/christmas-task',
-            
+            urlRepo: 'https://github.com/MaryAnzh/christmas-task',            
+        },
+        {
+            name: 'Project-management-app-presentation for team task (Angular + Reveal.js)',
+            src: 'Project-management-app-presentation.png',
+            urlDeploy: 'https://maryanzh.github.io/Project-management-app-presentation/',
+            urlRepo: 'https://github.com/MaryAnzh/Project-management-app-presentation/settings/pages',    
+        },
+        {
+            name: 'cssMemSlider (HTML + CSS)',
+            src: 'cssMemSlider.png',
+            urlDeploy: 'https://maryanzh.github.io/cssMemSlider/cssMemSlider/',
+            urlRepo: 'https://github.com/MaryAnzh/cssMemSlider',    
         },
     ];
 
