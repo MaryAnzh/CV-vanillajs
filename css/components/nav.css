@@ -127,6 +127,7 @@
     margin-top: 0;
     background-color: var(--mainColorDark);
     transition: .5s;
+    z-index: 2;
 }
 
 .sticky-menu li {

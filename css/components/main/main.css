@@ -1,6 +1,7 @@
 @import 'about.css';
 @import 'contact.css';
 @import 'skill.css';
+@import 'projects.css';
 
 .cv__main {
     width: 100%;
