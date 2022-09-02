@@ -8,17 +8,18 @@
 
 .cv__main__languages__wrap__info {
     max-width: 500px;
-    width: 100%;
+    width: 100vw;
     height: 180px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .cv__main__languages__wrap__info__lang {
-    width: 160px;
-    height: 160px;
+    max-width: 160px;
+    width: 48vw;
+    max-height: 160px;
+    height: 48vw;
     border: 5px solid var(--mainColorDark);
     border-radius: 50%;
     display: flex;
