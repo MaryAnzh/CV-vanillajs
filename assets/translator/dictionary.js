@@ -108,6 +108,35 @@ const dictionary = {
             en: 'education',
             ru: 'образование',
         },
+        HIGHER: {
+            en: 'Higher education',
+            ru: 'Высшее образование',
+        },
+        UNIVERSITY: {
+            en: 'The Higher education',
+            ru: 'Высшее образование',
+        },
+        BSU: {
+            en: 'Business of BSU',
+            ru: 'Институт Бизнеса БГУ',
+        },
+        SPECIALTY_TITLE: {
+            en: 'specialty:',
+            ru: 'специальность:'
+        },
+        SPECIALTY: {
+            en: 'Web Design and Computer Graphics',
+            ru: 'Веб дизайн и компьютерная графика',
+        },
+        QUALIFICATION_TITLE: {
+            en: 'qualification:',
+            ru: 'квалификация:',
+        },
+        QUALIFICATION: {
+            en: 'developer-web designer',
+            ru: 'программист-web-дизайнер',
+        },
+
     },
     LANGUAGES: {
         TITLE: {

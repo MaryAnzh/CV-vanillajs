@@ -3,6 +3,7 @@
 @import 'skill.css';
 @import 'projects.css';
 @import 'languages.css';
+@import 'education.css';
 
 .cv__main {
     width: 100%;

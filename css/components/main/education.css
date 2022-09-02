@@ -1,0 +1,71 @@
+.cv__main__education__wrap {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cv__main__education__wrap__info {
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv__main__education__wrap__info__img {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv__main__education__wrap__info__img p {
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.cv__main__education__wrap__info__img svg {
+    width: 180px;
+    height: 160px;
+    fill: white;
+}
+
+.cv__main__education__wrap__info__university {
+    width: 50%;
+    height: 300px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.cv__main__education__wrap__info__university h4 {
+    font-size: 24px;
+}
+
+.cv__main__education__wrap__info__university p {
+    font-size: 22px;
+}
+
+.cv__main__education__wrap__info__university__type {
+    color: var(--additionalColor);
+    font-weight: bold;
+}
+
+@media (max-width: 840px) {
+    .cv__main__education__wrap__info__img {
+        display: none;
+    }
+
+    .cv__main__education__wrap__info__university {
+        width: 100%;
+        transition: .3s;
+    }
+}
