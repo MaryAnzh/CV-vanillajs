@@ -1,0 +1,34 @@
+.cv__main__languages__wrap {
+    min-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cv__main__languages__wrap__info {
+    max-width: 500px;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.cv__main__languages__wrap__info__lang {
+    width: 160px;
+    height: 160px;
+    border: 5px solid var(--mainColorDark);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv__main__languages__wrap__info__lang p {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+}
