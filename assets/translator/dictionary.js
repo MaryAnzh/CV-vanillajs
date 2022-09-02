@@ -114,6 +114,18 @@ const dictionary = {
             en: 'languages',
             ru: 'языки',
         },
+        EN: {
+            en: 'Englisg',
+            ru: 'Английский',
+        },
+        RU: {
+            en: 'Russian',
+            ru: 'Русский',
+        },
+        NATIVE: {
+            en: 'native',
+            ru: 'основной',
+        },
     }
 };
 
