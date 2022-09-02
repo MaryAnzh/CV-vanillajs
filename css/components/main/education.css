@@ -40,11 +40,11 @@
 
 .cv__main__education__wrap__info__university {
     width: 50%;
-
     padding: 20px 40px;
     display: flex;
     flex-direction: column;
     background: white;
+    transition: .3s;
 }
 
 .cv__main__education__wrap__info h4 {
@@ -67,6 +67,7 @@
     display: flex;
     flex-direction: column;
     background: white;
+    transition: .3s;
 }
 
 .cv__main__education__wrap__info__course h5 {
