@@ -65,6 +65,8 @@
 .cv__main__projects__wrap__slider-wrap__slider__item {
     width: 50%;
     height: 250px;
+    display: flex;
+    justify-content: center;
     background: white;
     transition: .3s;
 }
@@ -91,7 +93,6 @@
     width: 440px;
     padding: 20px;
     background: var(--mainColorLight2);
-    /* background: var(--mainColor); */
     border: 1px dotted var(--mainColorDark);
     border-radius: 8px;
 }
