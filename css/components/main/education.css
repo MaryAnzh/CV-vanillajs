@@ -99,11 +99,14 @@
 }
 
 @media (max-width: 840px) {
-    .cv__main__education__wrap__info__img {
+
+    .cv__main__education__wrap__info__img,
+    .cv__main__education__wrap__info__course-icon {
         display: none;
     }
 
-    .cv__main__education__wrap__info__university {
+    .cv__main__education__wrap__info__university,
+    .cv__main__education__wrap__info__course {
         width: 100%;
         transition: .3s;
     }
