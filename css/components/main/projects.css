@@ -91,10 +91,19 @@
 
 .cv__main__projects__wrap__slider-wrap__slider__item__item-view {
     width: 440px;
-    padding: 20px;
+    height: 260px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
     background: var(--mainColorLight2);
     border: 1px dotted var(--mainColorDark);
     border-radius: 8px;
+}
+
+.cv__main__projects__wrap__slider-wrap__slider__item__item-view__img {
+    height: 180px;
 }
 
 .cv__main__projects__wrap__slider-wrap__slider__item__item-view__title {
