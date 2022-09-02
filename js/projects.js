@@ -43,7 +43,7 @@ class Projects {
 
         //rendering
         this.renderProjectsList();
-        this.createSliderItem();
+        this.renderSliderItem();
 
         //EventListener
         this.leftSloderArroy_HTMLElem.addEventListener('click', (e) => this.shiftSliderItemOnClick(e));
@@ -51,7 +51,7 @@ class Projects {
         window.addEventListener('resize', (e) => this.updateSloderView(e));
     }
 
-    createSliderItem() {
+    renderSliderItem() {
         this.projects.forEach((elem, index) => {
             const div = document.createElement('div');
             div.classList.add('cv__main__projects__wrap__slider-wrap__slider__item');
@@ -61,7 +61,7 @@ class Projects {
                   <div class="item-number">${index + 1}</div>
                   <img
                     class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__img"
-                    src="/assets/projects/${elem.src}"
+                    src="assets/projects/${elem.src}"
                     alt="${elem.name}">
                 </div>
                 <p class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__title">${elem.name}</p>
