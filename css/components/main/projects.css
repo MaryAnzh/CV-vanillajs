@@ -116,6 +116,16 @@
     font-size: 20px;
 }
 
+.cv__main__projects__wrap__list-wrap__list li a {
+    color: var(--additionalColor);
+    transition: .3s;
+}
+
+.cv__main__projects__wrap__list-wrap__list li a:hover {
+    color: var(--additionalColorDark);
+    text-decoration: underline;
+}
+
 .arrow-block {
     pointer-events: none;
 }

@@ -7,24 +7,23 @@ class Projects {
 
     projects = [
         {
-            name: 'project-management-app',
-            src: 'project-management-app.png',
-        },
-        {
-            name: 'project-management-app',
+            name: 'project-management-app (Angular)',
             src: 'project-management-app-2.png',
+            urlDeploy: 'maryanzh.github.io/angular-project-management-app-individual/',
+            urlRepo: 'https://github.com/MaryAnzh/angular-project-management-app-individual',
         },
         {
-            name: 'project-management-app',
-            src: 'project-management-app.png',
+            name: 'YouTube-client-app (Angular)',
+            src: 'YouTube-client-app.png',
+            urlDeploy: '',
+            urlRepo: 'https://github.com/MaryAnzh/angular--YouTube-client-app',
         },
         {
-            name: 'project-management-app',
-            src: 'project-management-app-2.png',
-        },
-        {
-            name: 'project-management-app',
-            src: 'project-management-app.png',
+            name: 'christmas-task (js, ts, webpack)',
+            src: 'christmas-task.png',
+            urlDeploy: 'https://maryanzh.github.io/christmas-task/',
+            urlRepo: 'https://github.com/MaryAnzh/christmas-task',
+            
         },
     ];
 
@@ -43,7 +42,7 @@ class Projects {
         ];
 
         //rendering
-        this.createProjectsList();
+        this.renderProjectsList();
         this.createSliderItem();
 
         //EventListener
@@ -72,10 +71,13 @@ class Projects {
         });
     }
 
-    createProjectsList() {
+    renderProjectsList() {
         this.projects.forEach((proj) => {
             const li = document.createElement('li');
-            li.textContent = proj.name;
+            const deploy = proj.urlDeploy !== '' ? `--> <a href="${proj.urlDeploy}" target="_blank"> Deploy </a>` : ''; const liContent = `
+            <p>${proj.name} ${deploy} --> <a href="${proj.urlRepo}" target="_blank"> Repo </a></p>
+            `;
+            li.innerHTML = liContent;
             this.projectsList_HTMLElem.appendChild(li);
         });
     }
