@@ -9,15 +9,16 @@
 
 .cv__main__education__wrap__info {
     width: 100%;
-    border: 2px solid white;
-    border-radius: 10px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
+    border: 2px solid white;
+    border-radius: 10px;
 }
 
 .cv__main__education__wrap__info__img {
     width: 50%;
-    height: 300px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,14 +40,14 @@
 
 .cv__main__education__wrap__info__university {
     width: 50%;
-    height: 300px;
+
     padding: 20px 40px;
     display: flex;
     flex-direction: column;
     background: white;
 }
 
-.cv__main__education__wrap__info__university h4 {
+.cv__main__education__wrap__info h4 {
     font-size: 24px;
 }
 
@@ -56,6 +57,44 @@
 
 .cv__main__education__wrap__info__university__type {
     color: var(--additionalColor);
+    font-weight: bold;
+}
+
+.cv__main__education__wrap__info__course {
+    width: 50%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.cv__main__education__wrap__info__course h5 {
+    font-size: 22px;
+}
+
+.cv__main__education__wrap__info__course h4 {
+    align-self: flex-end;
+}
+
+.cv__main__education__wrap__info__course-icon {
+    width: 50%;
+    height: 100%;
+}
+
+.cv__main__education__wrap__info__course__course-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cv__main__education__wrap__info__course__course-info ul {
+    width: 230px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.cv__main__education__wrap__info__course__course-info ul::first-line {
     font-weight: bold;
 }
 

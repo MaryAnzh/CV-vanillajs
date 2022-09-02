@@ -136,7 +136,14 @@ const dictionary = {
             en: 'developer-web designer',
             ru: 'программист-web-дизайнер',
         },
-
+        DATE: {
+            en: 'graduation:',
+            ru: 'дата окончания:'
+        },
+        COURSES: {
+            en: 'Courses',
+            ru: 'Курсы',
+        }
     },
     LANGUAGES: {
         TITLE: {
