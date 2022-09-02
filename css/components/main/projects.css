@@ -149,3 +149,9 @@
         width: 100%;
     }
 }
+
+@media (max-width: 630px) {
+    .cv__main__projects__wrap__slider-wrap {
+        display: none;
+    }
+}
