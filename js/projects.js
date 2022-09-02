@@ -31,43 +31,45 @@ class Projects {
     projectsLenth = this.projects.length;
     miniSliderScreenWidth = 1150;
     windowInnerWidth = window.innerWidth;
-    currwntViewItem = this.windowInnerWidth > this.miniSliderScreenWidth ? 2 : 1;
-
-    shiftCountMin = 0;
-    shiftCountMax = this.projectsLenth - this.currwntViewItem;
+    currwntViewItem = this.windowInnerWidth > this.miniSliderScreenWidth ? 2 : 1; a
 
     shiftCount = 0;
     currentShift = 0;
-
 
     constructor() {
         this.currentShowList = [
             this.projects[0],
             this.projects[1],
         ];
+
+        //rendering
         this.createProjectsList();
         this.createSliderItem();
 
+        //EventListener
         this.leftSloderArroy_HTMLElem.addEventListener('click', (e) => this.shiftSliderItemOnClick(e));
         this.rightSloderArroy_HTMLElem.addEventListener('click', (e) => this.shiftSliderItemOnClick(e));
+        window.addEventListener('resize', (e) => this.updateSloderView(e));
     }
 
     createSliderItem() {
-        let htmlNodes = '';
-        this.projects.forEach((elem) => {
+        this.projects.forEach((elem, index) => {
+            const div = document.createElement('div');
+            div.classList.add('cv__main__projects__wrap__slider-wrap__slider__item');
             const htmlElem =
-                `<div class="cv__main__projects__wrap__slider-wrap__slider__item"></div>`;
-            // <div class="cv__main__projects__wrap__slider-wrap__slider__item__item-view">
-            //     <img
-            //     class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__img"
-            //     src="/assets/projects/${elem.src}"
-            //     alt="${elem.name}">
-            //     <p class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__title">${elem.name}</p>
-            // </div>
-            htmlNodes += htmlElem;
+                `<div class="cv__main__projects__wrap__slider-wrap__slider__item__item-view">
+                <div class="img-wrqp">
+                  <div class="item-number">${index + 1}</div>
+                  <img
+                    class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__img"
+                    src="/assets/projects/${elem.src}"
+                    alt="${elem.name}">
+                </div>
+                <p class="cv__main__projects__wrap__slider-wrap__slider__item__item-view__title">${elem.name}</p>
+            </div>`;
+            div.innerHTML = htmlElem;
+            this.slider_HTMLElem.appendChild(div);
         });
-
-        this.slider_HTMLElem.innerHTML = htmlNodes;
     }
 
     createProjectsList() {
@@ -78,43 +80,60 @@ class Projects {
         });
     }
 
+    updateSloderView() {
+        this.windowInnerWidth = window.innerWidth;
+        this.currwntViewItem = this.windowInnerWidth > this.miniSliderScreenWidth ? 2 : 1;
+
+        const viewItem = this.currwntViewItem;
+        const min = 0;
+        const max = this.projectsLenth - viewItem;
+        const items = document.querySelectorAll('.cv__main__projects__wrap__slider-wrap__slider__item');
+
+        if (this.shiftCount === min) {
+            this.rightSloderArroy_HTMLElem.classList.add('arrow-block');
+        }
+        if (this.shiftCount === max) {
+            this.leftSloderArroy_HTMLElem.classList.add('arrow-block');
+        }
+        if (this.shiftCount === min + 1) {
+            this.rightSloderArroy_HTMLElem.classList.remove('arrow-block');
+        }
+        if (this.shiftCount === max - 1) {
+            this.leftSloderArroy_HTMLElem.classList.remove('arrow-block');
+        }
+        if (this.shiftCount > max) {
+            items.forEach((elem) => {
+                elem.style.transform = `translateX(${this.currentShift + 100}%)`;
+            });
+            this.shiftCount--;
+            this.currentShift += 100;
+        }
+    }
+
     shiftSliderItemOnClick(e) {
         const arrow = e.target;
         const type = arrow.dataset.type;
 
+        switch (type) {
+            case 'left':
+                this.shiftCount++;
+                this.currentShift -= 100;
+                break;
+
+            case 'right':
+                this.shiftCount--;
+                this.currentShift += 100;
+                break;
+
+            default:
+                break;
+        }
+
         const items = document.querySelectorAll('.cv__main__projects__wrap__slider-wrap__slider__item');
-        const itemWidth = items[0].clientWidth;
-
-        console.log(itemWidth);
-        if (type === 'left') {
-            this.shiftCount++;
-            this.currentShift -= itemWidth;
-
-            if (this.shiftCount === this.shiftCountMax) {
-                this.leftSloderArroy_HTMLElem.classList.add('arrow-block');
-            }
-            if (this.shiftCount === this.shiftCountMin + 1) {
-                console.log('отработал');
-                this.rightSloderArroy_HTMLElem.classList.remove('arrow-block');
-            }
-        }
-        if (type === 'right') {
-            this.shiftCount--;
-            this.currentShift += itemWidth;
-
-            if (this.shiftCount === this.shiftCountMin) {
-                this.rightSloderArroy_HTMLElem.classList.add('arrow-block');
-            }
-            if (this.shiftCount === this.shiftCountMax - 1) {
-                this.leftSloderArroy_HTMLElem.classList.remove('arrow-block');
-            }
-        }
-
-        console.log('this.currentShift');
-        console.log(this.currentShift);
         items.forEach((elem) => {
-            elem.style.transform = `translate(${this.currentShift}px, 0px)`;
+            elem.style.transform = `translateX(${this.currentShift}%)`;
         });
+        this.updateSloderView();
     }
 }
 
