@@ -1,0 +1,29 @@
+.cv__main__code__wrap {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cv__main__code__wrap__description {
+    font-size: 20px;
+    align-self: flex-start;
+}
+
+.cv__main__code__wrap__description::first-letter {
+    padding-left: 20px;
+}
+
+.cv__main__code__wrap__examples {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv__main__code__wrap__examples__code-example {
+    min-width: 500px;
+    width: 48%;
+    height: 500px;
+    box-shadow: 5px 5px 10px rgba(139, 138, 138, 0.5);
+}
