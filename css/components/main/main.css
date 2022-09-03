@@ -5,6 +5,7 @@
 @import 'languages.css';
 @import 'education.css';
 @import 'code-example.css';
+@import 'browser-frame.css';
 
 .cv__main {
     width: 100%;
