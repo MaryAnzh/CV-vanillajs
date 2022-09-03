@@ -1,0 +1,221 @@
+.frame {
+    min-width: 500px;
+    width: fit-content;
+    min-height: 300px;
+    border: 1px solid var(--mainColorDark);
+    box-shadow: 5px 5px 10px rgb(180, 180, 180);
+}
+
+.frame__header {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 5px;
+    background: var(--mainColorLight);
+}
+
+.frame__header__site-name {
+    width: 300px;
+    height: 25px;
+    padding-left: 10px;
+    border-radius: 8px 8px 0 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.frame__header__site-name__fav {
+    width: 16px;
+    height: 16px;
+    background: var(--additionalDark);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.frame__header__site-name__name {
+    width: 250px;
+    padding-left: 10px;
+}
+
+.frame__header__site-name__cross {
+    font-size: 22px;
+    color: var(--mainColorDark);
+    padding-right: 10px;
+    transform: rotate(0.125turn);
+}
+
+.frame__header__cross {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 26px;
+    font-weight: lighter;
+    color: var(--mainColorDark);
+}
+
+.frame__header__icons {
+    width: 72px;
+    height: 30px;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.frame__header__icons__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame__header__icons__icon__line {
+    width: 70%;
+    height: 1px;
+    background: var(--mainColorDark);
+}
+
+.frame__header__icons__icon__open {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    transform: translate(0px, -2px);
+    border: 1px solid var(--mainColorDark);
+}
+
+.frame__header__icons__icon__open::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    transform: translate(-4px, 2px);
+    border: 1px solid var(--mainColorDark);
+    background: var(--mainColorLight);
+}
+
+.cross {
+    background: var(--contrastColor);
+    color: #ffffff;
+}
+
+.cross p {
+    font-size: 20px;
+    transform: rotate(0.125turn);
+}
+
+.frame__url {
+    width: 100%;
+    height: 38px;
+    background: var(--mainColorLight2);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.frame__url__icon {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.frame__url__icon__arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mainColorFont);
+}
+
+.frame__url__icon__arrow:nth-child(2) {
+    opacity: 0.3;
+}
+
+.frame__url__icon__arrow-round {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mainColorFont);
+    transform: rotate(0.25turn);
+    font-size: 20px;
+}
+
+.frame__url__field {
+    width: 100%;
+    height: 30px;
+    background: #ffffff;
+    border: 1px solid var(--mainColorDark);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.frame__url__field__icon {
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    border: 1px solid var(--mainColor);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mainColor);
+    font-size: 12px;
+}
+
+.frame__url__field__icon p {
+    font-size: 12px;
+}
+
+.frame__url__icon2 {
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.frame__url__icon2__user-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--mainColorDark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.frame__url__icon2__setting {
+    width: 10px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.frame__url__icon2__setting__point {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--mainColorDark);
+}
+
+@media (max-width: 500px) {
+    .frame {
+        display: none;
+    }
+}

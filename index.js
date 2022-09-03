@@ -7,5 +7,7 @@ import './js/aboutMe.js';
 import './js/skill.js';
 import './js/projects.js';
 import './js/education.js';
+import './js/codeExample.js';
+import './js/browserFrame.js';
 import './js/translator.js';
 import './js/preLoader.js';

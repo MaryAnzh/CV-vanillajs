@@ -101,6 +101,14 @@ const dictionary = {
         TITLE: {
             en: 'code',
             ru: 'код',
+        },
+        TEXT: {
+            en: 'This code contains  examples array creating, sorting, and filtering.',
+            ru: 'Пример содержит код создания, сортировки и фильтрации массива,',
+        },
+        RESULT: {
+            en: 'result',
+            ru: 'результат',
         }
     },
     EDUCATION: {
