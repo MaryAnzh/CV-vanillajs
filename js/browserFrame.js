@@ -60,8 +60,8 @@ class BrowserFrame {
           </div>
         </div>
         </div>
+        <div class="frame__body"></div>
         </div>`;
-        console.log( this.browserFrame_HTML);
         this.browserFrame_HTML.innerHTML = view;
     }
 };
