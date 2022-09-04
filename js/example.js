@@ -59,7 +59,7 @@ class Example {
             pattern="[2-9]"
             maxlength="1">
             <div class="example__form__error">
-            <p class="example__form__error__value">Enter currect value</p>
+            <p class="example__form__error__value">Enter correct value</p>
             </div>
         <div class="example__form__buttons">
             <button class="example__form__buttons__create example-block-item"
