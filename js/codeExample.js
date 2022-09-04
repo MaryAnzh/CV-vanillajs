@@ -1,13 +1,13 @@
 class CodeExample {
     codeWrap_HTML = document.querySelector('.cv__main__code__wrap__examples');
-    codes = [
+    codeExamples = [
         {
             title: 'vanilla JS',
-            codeNav: ['HTML', 'CSS', 'JS'],
+            codeNav: ['HTML', 'CSS', 'JS', 'utile'],
         },
         {
             title: 'Angular',
-            codeNav: ['HTML', 'SCSS', 'TS'],
+            codeNav: ['HTML', 'SCSS', 'TS', 'utile'],
         },
 
     ];
@@ -17,19 +17,28 @@ class CodeExample {
     }
 
     renderCodeExample() {
-        const strNum = this.createCodeStringNumber(12);
+        const strNum = this.createcodeExamplestringNumber(12);
 
-        this.codes.forEach((code) => {
+        this.codeExamples.forEach((code) => {
             const div = document.createElement('div');
             div.classList.add('cv__main__code__wrap__examples__code-example');
+
+            const nav = () =>
+                code.codeNav.reduce((prev, curr, index) => {
+                    if (index === 0) {
+                        prev += `<li class="cv__main__code__wrap__examples__code-example__nav__item active-item" data-name="${curr}">${curr}</li>`;
+                    } else {
+                        prev += `<li class="cv__main__code__wrap__examples__code-example__nav__item" data-name="${curr}">${curr}</li>`;
+                    }
+                    return prev;
+                }, ``);
+
             const view = `
               <h4 class="cv__main__code__wrap__examples__code-example__title">
                 ${code.title}
               </h4>
               <ul class="cv__main__code__wrap__examples__code-example__nav">
-                 <li class="cv__main__code__wrap__examples__code-example__nav__item active-item" data-name="${code.codeNav[0]}">${code.codeNav[0]}</li>
-                 <li class="cv__main__code__wrap__examples__code-example__nav__item" data-name="${code.codeNav[1]}">${code.codeNav[1]}</li>
-                 <li class="cv__main__code__wrap__examples__code-example__nav__item" data-name="${code.codeNav[2]}">${code.codeNav[2]}</li>
+                 ${nav()}
               </ul>
               <div class="cv__main__code__wrap__examples__code-example__code">
               <div class="cv__main__code__wrap__examples__code-example__code__nunber">
@@ -43,7 +52,7 @@ class CodeExample {
         });
     }
 
-    createCodeStringNumber(number) {
+    createcodeExamplestringNumber(number) {
         let strNumber = 0;
         let numbers = ``;
         while (strNumber < number) {
