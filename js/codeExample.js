@@ -44,7 +44,7 @@ class CodeExample {
               <div class="cv__main__code__wrap__examples__code-example__code__nunber">
               <pre><code>${strNum}</code></pre>
               </div>
-              <div class=""></div>
+              <div class="cv__main__code__wrap__examples__code-example__code__text"><pre><code>In process...</code></pre></div>
               </div>
             `;
             div.innerHTML = view;
