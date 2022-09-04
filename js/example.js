@@ -4,11 +4,13 @@ class Example {
     formInput_HTMLElem = null;
     createArroyButton_HTMLElem = null;
     deleteArroyButton_HTMLElem = null;
+    viewList_HTMLElem = null;
+    viewText_HTMLElem = null;
     formFieldError_HTMLElem = null;
 
 
     navList = [
-        'create array',
+        '  ',
     ];
 
     result = [];
@@ -40,6 +42,8 @@ class Example {
         this.form__HTML = document.querySelector('.example__form');
         this.formInput_HTMLElem = document.querySelector('.example__form__input');
         this.createArroyButton_HTMLElem = document.querySelector('.example__form__buttons__create');
+        this.viewList_HTMLElem = document.querySelector('.example__view__list');
+        this.viewText_HTMLElem = document.querySelector('.example__view__text');
         this.deleteArroyButton_HTMLElem = document.querySelector('.example__form__buttons__delete');
 
         this.formInput_HTMLElem.addEventListener('focus', () => this.createArroyButton_HTMLElem.classList.remove('example-block-item'));
@@ -87,16 +91,15 @@ class Example {
     }
 
     renderViewArray(array) {
-        const exampleView_HTML = document.querySelector('.example__view__list');
         array.forEach((num) => {
             const li = document.createElement('li');
             li.classList.add('example__view__list__list-item');
             li.textContent = num;
-            exampleView_HTML.appendChild(li);
+            this.viewList_HTMLElem.appendChild(li);
         });
     }
 
-    createArrow(number) {
+    createArray(number) {
         let count = 0;
         const array = [];
         while (count < number) {
@@ -109,22 +112,41 @@ class Example {
         HTMLNodes.forEach((node) => node.classList.remove('example-block-item'));
     }
 
+    removeAllChild(element) {
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+    }
+
     submit(e) {
         e.preventDefault();
-
-        const value = this.formInput_HTMLElem.value;
         const submitter = e.submitter;
-        console.log(submitter.dataset.type);
+        const submitterType = submitter.dataset.type;
 
-        submitter.classList.add('example-block-item');
-        this.formInput_HTMLElem.classList.add('example-block-item');
-        console.log(value);
+        if (submitterType === 'create') {
+            this.formInput_HTMLElem.classList.add('example-block-item');
+            this.deleteArroyButton_HTMLElem.classList.remove('example-block-item');
+            submitter.classList.add('example-block-item');
+            this.viewText_HTMLElem.style.display = 'none';
+            this.viewList_HTMLElem.style.display = 'flex';
 
-        // 
-        // 
-        // const input = e.target[0];
+            const value = +(this.formInput_HTMLElem.value);
+            this.result = this.createArray(value);
+            this.renderViewArray(this.result);
+        }
 
-        // console.log(e.target.children[0]);
+        if (submitterType === 'delete') {
+            this.formInput_HTMLElem.classList.remove('example-block-item');
+            this.createArroyButton_HTMLElem.classList.add('example-block-item');
+            submitter.classList.add('example-block-item');
+            this.viewText_HTMLElem.style.display = 'block';
+            this.viewList_HTMLElem.style.display = 'none';
+            this.formInput_HTMLElem.value = '';
+
+            this.result = [];
+            this.removeAllChild(this.viewList_HTMLElem);
+        }
+
     }
 }
 
