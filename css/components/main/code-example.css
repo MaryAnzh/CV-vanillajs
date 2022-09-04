@@ -64,6 +64,7 @@
     height: 350px;
     margin-top: 20px;
     display: flex;
+    overflow: auto;
     box-shadow: 5px 5px 10px rgba(139, 138, 138, 0.5);
 }
 
