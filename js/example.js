@@ -131,6 +131,7 @@ class Example {
             this.viewList_HTMLElem.style.display = 'flex';
 
             const value = +(this.formInput_HTMLElem.value);
+            this.formInput_HTMLElem.blur();
             this.result = this.createArray(value);
             this.renderViewArray(this.result);
         }
