@@ -19,9 +19,7 @@ class Example {
             <p class="example__view__text">
             Enter number from 2 to 9
             </p>
-            <ul class="example__view__list">
-              
-            </ul>
+            <ul class="example__view__list"></ul>
         </div>
         <div class="example__nav">
             <ul class="example__nav__list"></ul>
