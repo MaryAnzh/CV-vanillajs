@@ -76,7 +76,7 @@ class CodeExample {
     afgerRender() {
         this.codeNavItems_HTMLCollection = document.querySelectorAll('.cv__main__code__wrap__examples__code-example__nav__item');
         this.exampleCodeView_HTMLCollection = document.querySelectorAll('.example-code-view');
-        this.codeWrapNum__HTMLCollection = document.querySelectorAll('.cv__main__code__wrap__examples__code-example__code__nunber');
+        this.codeWrapNum__HTMLCollection = document.querySelectorAll('.cv__main__code__wrap__examples__code-example__code__number');
 
 
         this.codeNavItems_HTMLCollection.forEach((elem) => {
@@ -100,7 +100,7 @@ class CodeExample {
                 hljs.highlightBlock(block);
               });
             const num = this.calcStringInCode(code)
-            //codeWrapNum.innerHTML = `<pre><code>${this.createcodeExamplestringNumber(num)}</code></pre>`
+            codeWrapNum.innerHTML = this.createcodeExamplestringNumber(num);
         };
         addCode(this.codeExamples[wrapIndex][name]);
 
