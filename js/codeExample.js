@@ -22,14 +22,14 @@ class CodeExample {
             css: this.cssJS,
             js: this.jsJS,
         },
-        {
-            title: 'Angular',
-            codeNav: ['html', 'scss', 'ts'],
-            html: this.htmlAngular,
-            htmlStrNum: this.calcStringInCode(this.htmlAngular),
-            scss: 'CSCC In process...',
-            ts: 'TS In process...',
-        },
+        // {
+        //     title: 'Angular',
+        //     codeNav: ['html', 'scss', 'ts'],
+        //     html: this.htmlAngular,
+        //     htmlStrNum: this.calcStringInCode(this.htmlAngular),
+        //     scss: 'CSCC In process...',
+        //     ts: 'TS In process...',
+        // },
     ];
 
     constructor() {
@@ -107,8 +107,6 @@ class CodeExample {
         this.codeNavItems_HTMLCollection.forEach(elem => {
             const elemType = elem.dataset.name.split('_')[1];
             if (elemType === type) {
-                console.log(elemType, type);
-                console.log(elemType === type);
                 elem.classList.remove('active-item')
             }
         });
