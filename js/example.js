@@ -4,6 +4,7 @@ class Example {
     formInput = null;
     createArrayButton = null;
     deleteArrayButton = null;
+    shuffleArrayButton = null;
     numberListVeiw = null;
     messageVlew = null;
 
@@ -39,12 +40,13 @@ class Example {
     afteRender() {
         this.form = document.querySelector('.example__form');
         this.formInput = document.querySelector('.example__form__input');
-        this.createArrayButton= document.querySelector('.example__form__buttons__create');
+        this.createArrayButton = document.querySelector('.example__form__buttons__create');
+        this.shuffleArrayButton = document.querySelector('.example__form__buttons__shuffle');
         this.numberListVeiw = document.querySelector('.example__view__list');
         this.messageVlew = document.querySelector('.example__view__text');
         this.deleteArrayButton = document.querySelector('.example__form__buttons__delete');
 
-        this.formInput.addEventListener('focus', () => this.createArroyButton_HTMLElem.classList.remove('example-block-item'));
+        this.formInput.addEventListener('focus', () => this.createArrayButton.classList.remove('example-block-item'));
         this.form.addEventListener('submit', (e) => this.submit(e));
     }
 
@@ -66,6 +68,12 @@ class Example {
                 type="button">
                   create
                 </button>
+
+                <button class="example__form__buttons__shuffle example-block-item"
+                type="submit"    
+                data-type="shuffle">
+                shuffle
+             </button>    
             <button class="example__form__buttons__delete example-block-item"
                 type="submit"    
                 data-type="delete">
@@ -116,6 +124,10 @@ class Example {
         }
     }
 
+    shuffle(array) {
+        array.sort(() => Math.random() - 0.5);
+    }
+
     submit(e) {
         e.preventDefault();
         const submitter = e.submitter;
@@ -124,6 +136,7 @@ class Example {
         if (submitterType === 'create') {
             this.formInput.classList.add('example-block-item');
             this.deleteArrayButton.classList.remove('example-block-item');
+            this.shuffleArrayButton.classList.remove('example-block-item');
             submitter.classList.add('example-block-item');
             this.messageVlew.style.display = 'none';
             this.numberListVeiw.style.display = 'flex';
@@ -137,6 +150,7 @@ class Example {
         if (submitterType === 'delete') {
             this.formInput.classList.remove('example-block-item');
             this.createArroyButton_HTMLElem.classList.add('example-block-item');
+            this.shuffleArrayButton.classList.add('example-block-item');
             submitter.classList.add('example-block-item');
             this.messageVlew.style.display = 'block';
             this.numberListVeiw.style.display = 'none';
@@ -144,6 +158,12 @@ class Example {
 
             this.result = [];
             this.removeAllChild(this.numberListVeiw);
+        }
+
+        if (submitterType === 'shuffle') {
+            this.shuffle(this.result);
+            this.removeAllChild(this.numberListVeiw);
+            this.renderViewArray(this.result);
         }
     }
 }
