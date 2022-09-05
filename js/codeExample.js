@@ -61,11 +61,8 @@ class CodeExample {
                  ${nav()}
               </ul>
               <div class="cv__main__code__wrap__examples__code-example__code">
-
-              <div class="cv__main__code__wrap__examples__code-example__code__nunber">
-              <pre><code>${this.createcodeExamplestringNumber(code.htmlStrNum)}</code></pre>
-              </div>
-              <div class="cv__main__code__wrap__examples__code-example__code__text"><pre><code class="example-code-view"></code></pre></div>
+                <div class="cv__main__code__wrap__examples__code-example__code__number">${this.createcodeExamplestringNumber(code.htmlStrNum)}</div>
+                <div class="cv__main__code__wrap__examples__code-example__code__text"><pre><code class="example-code-view css"></code></pre></div>
               </div>
             `;
 
@@ -99,15 +96,19 @@ class CodeExample {
 
         const addCode = (code) => {
             codeWrap.textContent = code;
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+              });
             const num = this.calcStringInCode(code)
-            codeWrapNum.innerHTML = `<pre><code>${this.createcodeExamplestringNumber(num)}</code></pre>`
+            //codeWrapNum.innerHTML = `<pre><code>${this.createcodeExamplestringNumber(num)}</code></pre>`
         };
         addCode(this.codeExamples[wrapIndex][name]);
 
         this.codeNavItems_HTMLCollection.forEach(elem => {
             const elemType = elem.dataset.name.split('_')[1];
             if (elemType === type) {
-                elem.classList.remove('active-item')
+                elem.classList.remove('active-item');
+
             }
         });
         elem.classList.add('active-item');
