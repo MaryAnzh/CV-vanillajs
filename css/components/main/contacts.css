@@ -1,17 +1,17 @@
-.cv__main__contactes__wrap {
+.cv__main__contacts__wrap {
     max-width: 1200px;
     width: 100%;
     padding-bottom: 20px;
 }
 
-.cv__main__contactes__wrap__cards-wrap {
+.cv__main__contacts__wrap__cards-wrap {
     width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
 
-.cv__main__contactes__wrap__cards-wrap__card {
+.cv__main__contacts__wrap__cards-wrap__card {
     min-width: 200px;
     width: 320px;
     height: 120px;
@@ -22,17 +22,17 @@
     background: var(--mainColorLight2);
 }
 
-.cv__main__contactes__wrap__cards-wrap__card__title::first-letter {
+.cv__main__contacts__wrap__cards-wrap__card__title::first-letter {
     text-transform: uppercase;
 }
 
 @media (max-width: 660px) {
-    .cv__main__contactes__wrap__cards-wrap {
+    .cv__main__contacts__wrap__cards-wrap {
         flex-wrap: wrap;
         gap: 10px;
     }
 
-    .cv__main__contactes__wrap__cards-wrap__card {
+    .cv__main__contacts__wrap__cards-wrap__card {
         height: fit-content;
         padding: 0 10px;
         border: none;

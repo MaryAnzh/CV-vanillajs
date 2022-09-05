@@ -41,13 +41,13 @@ const dictionary = {
             ru: 'Кратко о себе:'
         },
     },
-    CONTACTES: {
+    CONTACTS: {
         TITLE: {
-            en: 'contactes (Belarus, Minsk)',
+            en: 'contacts (Belarus, Minsk)',
             ru: 'Контакты (Беларусь, Минск)'
         },
-        PHON: {
-            en: 'phon',
+        PHONE: {
+            en: 'phone',
             ru: 'телефон',
         },
         MAIL: {

@@ -1,17 +1,17 @@
-class Contactes {
+class Contacts {
     cards = [
-        'phon',
+        'phone',
         'mail',
         'messengers'
     ];
 
-    contactesinfo = {
-        phon: ['+375297023851'],
+    contactsinfo = {
+        phone: ['+375297023851'],
         mail: ['maryang@mail.ru'],
-        messengers: ['Skype: maryang@mail.ru', 'Discord: maryang#3361', 'Viber: phon'],
+        messengers: ['Skype: maryang@mail.ru', 'Discord: maryang#3361', 'Viber: +375297023851'],
     }
 
-    contactesElement = document.querySelector('#contactes');
+    contactsElement = document.querySelector('#contacts');
 
     constructor() {
         this.render();
@@ -24,22 +24,22 @@ class Contactes {
     creqteCards() {
         this.cards.forEach((elem, index) => {
             const card = document.createElement('div');
-            card.classList.add('cv__main__contactes__wrap__cards-wrap__card');
+            card.classList.add('cv__main__contacts__wrap__cards-wrap__card');
             const title = document.createElement('h5');
-            title.classList.add('cv__main__contactes__wrap__cards-wrap__card__title', 'translator');
-            title.setAttribute('data-translat', `CONTACTES.${elem.toUpperCase()}`);
+            title.classList.add('cv__main__contacts__wrap__cards-wrap__card__title', 'translator');
+            title.setAttribute('data-translat', `CONTACTS.${elem.toUpperCase()}`);
             card.appendChild(title);
 
-            this.contactesinfo[elem].forEach((el) => {
+            this.contactsinfo[elem].forEach((el) => {
                 const contacte = document.createElement('p');
                 const arrayFromString = el.split('');
                 const contacteСover = arrayFromString.reduce((prev, curr) => prev + `<span>${curr}</span>`, ``);
                 contacte.innerHTML = contacteСover;
                 card.appendChild(contacte);
             });
-            this.contactesElement.appendChild(card);
+            this.contactsElement.appendChild(card);
         });
     }
 }
 
-const contactes = new Contactes();
+const contacts = new Contacts();
