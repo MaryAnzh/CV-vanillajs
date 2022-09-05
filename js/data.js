@@ -240,10 +240,6 @@ const cssExampleJS =
     return array;
   }
 
-  removeBlockClass(HTMLNodes) {
-    HTMLNodes.forEach((node) => node.classList.remove('example-block-item'));
-  }
-
   removeAllChild(element) {
     while (element.firstChild) {
       element.removeChild(element.firstChild);

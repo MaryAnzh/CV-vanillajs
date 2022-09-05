@@ -106,8 +106,8 @@ class Example {
         return array;
     }
 
-    removeBlockClass(HTMLNodes) {
-        HTMLNodes.forEach((node) => node.classList.remove('example-block-item'));
+    removeClass(nodes, className) {
+        nodes.forEach((node) => node.classList.remove(className));
     }
 
     removeAllChild(element) {
