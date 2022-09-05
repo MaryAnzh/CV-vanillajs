@@ -149,7 +149,7 @@ class Example {
 
         if (submitterType === 'delete') {
             this.formInput.classList.remove('example-block-item');
-            this.createArroyButton_HTMLElem.classList.add('example-block-item');
+            this.createArrayButton.classList.add('example-block-item');
             this.shuffleArrayButton.classList.add('example-block-item');
             submitter.classList.add('example-block-item');
             this.messageVlew.style.display = 'block';
