@@ -1,7 +1,7 @@
 "use strict";
 
 import './js/nav.js';
-import './js/contacts.js';
+import './js/contactes.js';
 import './js/burger.js';
 import './js/aboutMe.js';
 import './js/skill.js';
