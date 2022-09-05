@@ -1,4 +1,4 @@
-import { htmlExampleJS, cssExampleJS } from './data.js';
+import { htmlExampleJS, cssExampleJS, jsExamlle } from './data.js';
 
 class CodeExample {
     //html element
@@ -10,7 +10,7 @@ class CodeExample {
     //data code
     htmlJS = htmlExampleJS;
     cssJS = cssExampleJS;
-    jsJS = 'my JS';
+    jsJS = jsExamlle;
     htmlAngular = 'Angular';
 
     codeExamples = [
@@ -104,7 +104,7 @@ class CodeExample {
             codeWrapNum.innerHTML = `<pre><code>${this.createcodeExamplestringNumber(num)}</code></pre>`
         };
         addCode(this.codeExamples[wrapIndex][name]);
-        
+
         this.codeNavItems_HTMLCollection.forEach(elem => elem.classList.remove('active-item'));
         elem.classList.add('active-item');
     }
