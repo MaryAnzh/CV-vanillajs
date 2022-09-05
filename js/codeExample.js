@@ -98,14 +98,20 @@ class CodeExample {
         const codeWrapNum = this.codeWrapNum__HTMLCollection[wrapIndex];
 
         const addCode = (code) => {
-            console.log(code);
             codeWrap.textContent = code;
             const num = this.calcStringInCode(code)
             codeWrapNum.innerHTML = `<pre><code>${this.createcodeExamplestringNumber(num)}</code></pre>`
         };
         addCode(this.codeExamples[wrapIndex][name]);
 
-        this.codeNavItems_HTMLCollection.forEach(elem => elem.classList.remove('active-item'));
+        this.codeNavItems_HTMLCollection.forEach(elem => {
+            const elemType = elem.dataset.name.split('_')[1];
+            if (elemType === type) {
+                console.log(elemType, type);
+                console.log(elemType === type);
+                elem.classList.remove('active-item')
+            }
+        });
         elem.classList.add('active-item');
     }
 

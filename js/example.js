@@ -8,7 +8,6 @@ class Example {
     viewText_HTMLElem = null;
     formFieldError_HTMLElem = null;
 
-
     navList = [
         '  ',
     ];
@@ -35,7 +34,7 @@ class Example {
         </div>
     </div>`;
         this.frame_HTML.innerHTML = viewExample;
-        this.rebderNavList();
+        this.renderNavList();
     }
 
     afteRender() {
@@ -79,7 +78,7 @@ class Example {
         return form;
     }
 
-    rebderNavList() {
+    renderNavList() {
         const exampleNav_HTML = document.querySelector('.example__nav__list');
         this.navList.forEach((list) => {
             const li = document.createElement('li');
@@ -147,7 +146,6 @@ class Example {
             this.result = [];
             this.removeAllChild(this.viewList_HTMLElem);
         }
-
     }
 }
 
