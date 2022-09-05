@@ -107,9 +107,13 @@ const dictionary = {
             ru: 'Пример содержит код создания, сортировки и фильтрации массива,',
         },
         RESULT: {
-            en: 'result',
-            ru: 'результат',
-        }
+            en: 'Interactive example',
+            ru: 'Интерактивный пример',
+        },
+        CURRENT_CODE: {
+            en: 'current code',
+            ru: 'Текущий код',
+        },
     },
     EDUCATION: {
         TITLE: {
