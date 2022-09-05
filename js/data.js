@@ -174,6 +174,7 @@ const cssExampleJS =
   formInput = null;
   createArrayButton = null;
   deleteArrayButton = null;
+  shuffleArrayButton = null;
   numberListVeiw = null;
   messageVlew = null;
 
@@ -198,11 +199,12 @@ const cssExampleJS =
     this.form = document.querySelector('.example__form');
     this.formInput = document.querySelector('.example__form__input');
     this.createArrayButton = document.querySelector('.example__form__buttons__create');
+    this.shuffleArrayButton = document.querySelector('.example__form__buttons__shuffle');
     this.numberListVeiw = document.querySelector('.example__view__list');
     this.messageVlew = document.querySelector('.example__view__text');
     this.deleteArrayButton = document.querySelector('.example__form__buttons__delete');
 
-    this.formInput.addEventListener('focus', () => this.createArroyButton_HTMLElem.classList.remove('example-block-item'));
+    this.formInput.addEventListener('focus', () => this.createArrayButton.classList.remove('example-block-item'));
     this.form.addEventListener('submit', (e) => this.submit(e));
   }
 
@@ -212,13 +214,13 @@ const cssExampleJS =
   }
 
   renderNavList() {
-    const exampleNav_HTML = document.querySelector('.example__nav__list');
+    const exampleNav = document.querySelector('.example__nav__list');
     this.navList.forEach((list) => {
       const li = document.createElement('li');
       li.classList.add('example__nav__list__list-item');
       li.textContent = list;
 
-      exampleNav_HTML.appendChild(li);
+      exampleNav.appendChild(li);
     });
   }
 
@@ -240,10 +242,18 @@ const cssExampleJS =
     return array;
   }
 
+  removeClass(nodes, className) {
+    nodes.forEach((node) => node.classList.remove(className));
+  }
+
   removeAllChild(element) {
     while (element.firstChild) {
       element.removeChild(element.firstChild);
     }
+  }
+
+  shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
   }
 
   submit(e) {
@@ -254,6 +264,7 @@ const cssExampleJS =
     if (submitterType === 'create') {
       this.formInput.classList.add('example-block-item');
       this.deleteArrayButton.classList.remove('example-block-item');
+      this.shuffleArrayButton.classList.remove('example-block-item');
       submitter.classList.add('example-block-item');
       this.messageVlew.style.display = 'none';
       this.numberListVeiw.style.display = 'flex';
@@ -266,7 +277,8 @@ const cssExampleJS =
 
     if (submitterType === 'delete') {
       this.formInput.classList.remove('example-block-item');
-      this.createArroyButton_HTMLElem.classList.add('example-block-item');
+      this.createArrayButton.classList.add('example-block-item');
+      this.shuffleArrayButton.classList.add('example-block-item');
       submitter.classList.add('example-block-item');
       this.messageVlew.style.display = 'block';
       this.numberListVeiw.style.display = 'none';
@@ -275,9 +287,14 @@ const cssExampleJS =
       this.result = [];
       this.removeAllChild(this.numberListVeiw);
     }
+
+    if (submitterType === 'shuffle') {
+      this.shuffle(this.result);
+      this.removeAllChild(this.numberListVeiw);
+      this.renderViewArray(this.result);
+    }
   }
 }
 
-const example = new Example();`
-
+const example = new Example();`;
 export { htmlExampleJS, cssExampleJS, jsExamlle };
