@@ -86,13 +86,13 @@ class Example {
     }
 
     renderNavList() {
-        const exampleNav_HTML = document.querySelector('.example__nav__list');
+        const exampleNav = document.querySelector('.example__nav__list');
         this.navList.forEach((list) => {
             const li = document.createElement('li');
             li.classList.add('example__nav__list__list-item');
             li.textContent = list;
 
-            exampleNav_HTML.appendChild(li);
+            exampleNav.appendChild(li);
         });
     }
 
