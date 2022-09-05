@@ -10,8 +10,8 @@ const dictionary = {
         }
     },
     NAV: {
-        CONTACT: {
-            en: 'contact',
+        CONTACTES: {
+            en: 'contactes',
             ru: 'Контакты'
         },
         ABOUT: {
@@ -45,9 +45,9 @@ const dictionary = {
             ru: 'Кратко о себе:'
         },
     },
-    CONTACTS: {
+    CONTACTES: {
         TITLE: {
-            en: 'contact',
+            en: 'contactes',
             ru: 'Контакты'
         },
         PHON: {
@@ -58,7 +58,7 @@ const dictionary = {
             en: 'mail',
             ru: 'почта',
         },
-        "MESSENGERS": {
+        MESSENGERS: {
             en: 'messengers',
             ru: 'мессенджеры',
         },

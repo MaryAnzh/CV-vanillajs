@@ -1,12 +1,11 @@
 class Example {
-    frame_HTML = document.querySelector('.frame__body');
-    form__HTML = null;
-    formInput_HTMLElem = null;
-    createArroyButton_HTMLElem = null;
-    deleteArroyButton_HTMLElem = null;
-    viewList_HTMLElem = null;
-    viewText_HTMLElem = null;
-    formFieldError_HTMLElem = null;
+    frame = document.querySelector('.frame__body');
+    form = null;
+    formInput = null;
+    createArrayButton = null;
+    deleteArrayButton = null;
+    numberListVeiw = null;
+    messageVlew = null;
 
     navList = [
         '  ',
@@ -22,31 +21,31 @@ class Example {
     render() {
         const viewExample = `
         <div class="example">
-        <div class="example__view">
+          <div class="example__view">
             <p class="example__view__text">
-            Enter number from 2 to 9
+              Enter number from 2 to 9
             </p>
             <ul class="example__view__list"></ul>
-        </div>
-        ${this.formView()}
+          </div>
+           ${this.formView()}
         <div class="example__nav">
             <ul class="example__nav__list"></ul>
         </div>
     </div>`;
-        this.frame_HTML.innerHTML = viewExample;
+        this.frame.innerHTML = viewExample;
         this.renderNavList();
     }
 
     afteRender() {
-        this.form__HTML = document.querySelector('.example__form');
-        this.formInput_HTMLElem = document.querySelector('.example__form__input');
-        this.createArroyButton_HTMLElem = document.querySelector('.example__form__buttons__create');
-        this.viewList_HTMLElem = document.querySelector('.example__view__list');
-        this.viewText_HTMLElem = document.querySelector('.example__view__text');
-        this.deleteArroyButton_HTMLElem = document.querySelector('.example__form__buttons__delete');
+        this.form = document.querySelector('.example__form');
+        this.formInput = document.querySelector('.example__form__input');
+        this.createArrayButton= document.querySelector('.example__form__buttons__create');
+        this.numberListVeiw = document.querySelector('.example__view__list');
+        this.messageVlew = document.querySelector('.example__view__text');
+        this.deleteArrayButton = document.querySelector('.example__form__buttons__delete');
 
-        this.formInput_HTMLElem.addEventListener('focus', () => this.createArroyButton_HTMLElem.classList.remove('example-block-item'));
-        this.form__HTML.addEventListener('submit', (e) => this.submit(e));
+        this.formInput.addEventListener('focus', () => this.createArroyButton_HTMLElem.classList.remove('example-block-item'));
+        this.form.addEventListener('submit', (e) => this.submit(e));
     }
 
     formView() {
@@ -94,7 +93,7 @@ class Example {
             const li = document.createElement('li');
             li.classList.add('example__view__list__list-item');
             li.textContent = num;
-            this.viewList_HTMLElem.appendChild(li);
+            this.numberListVeiw.appendChild(li);
         });
     }
 
@@ -123,28 +122,28 @@ class Example {
         const submitterType = submitter.dataset.type;
 
         if (submitterType === 'create') {
-            this.formInput_HTMLElem.classList.add('example-block-item');
-            this.deleteArroyButton_HTMLElem.classList.remove('example-block-item');
+            this.formInput.classList.add('example-block-item');
+            this.deleteArrayButton.classList.remove('example-block-item');
             submitter.classList.add('example-block-item');
-            this.viewText_HTMLElem.style.display = 'none';
-            this.viewList_HTMLElem.style.display = 'flex';
+            this.messageVlew.style.display = 'none';
+            this.numberListVeiw.style.display = 'flex';
 
-            const value = +(this.formInput_HTMLElem.value);
-            this.formInput_HTMLElem.blur();
+            const value = +(this.formInput.value);
+            this.formInput.blur();
             this.result = this.createArray(value);
             this.renderViewArray(this.result);
         }
 
         if (submitterType === 'delete') {
-            this.formInput_HTMLElem.classList.remove('example-block-item');
+            this.formInput.classList.remove('example-block-item');
             this.createArroyButton_HTMLElem.classList.add('example-block-item');
             submitter.classList.add('example-block-item');
-            this.viewText_HTMLElem.style.display = 'block';
-            this.viewList_HTMLElem.style.display = 'none';
-            this.formInput_HTMLElem.value = '';
+            this.messageVlew.style.display = 'block';
+            this.numberListVeiw.style.display = 'none';
+            this.formInput.value = '';
 
             this.result = [];
-            this.removeAllChild(this.viewList_HTMLElem);
+            this.removeAllChild(this.numberListVeiw);
         }
     }
 }
