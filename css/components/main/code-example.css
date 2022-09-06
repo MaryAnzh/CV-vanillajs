@@ -223,8 +223,8 @@
 
 .example__fun__list__list-item__buttons__button {
     padding: 2px 5px;
-    background: var(--mainColorDark2);
-    border: 1px solid var(--mainColorLight2);
+    background: var(--mainColorLight2);
+    border: 2px solid var(--mainColorLight);
     border-radius: 4px;
     text-transform: uppercase;
     margin-right: 20px;
@@ -233,7 +233,7 @@
 }
 
 .example__fun__list__list-item__buttons__button:hover {
-    background: var(--mainColorLight);
+    background: #ffff;
     border-color: #ffffff;
 }
 
