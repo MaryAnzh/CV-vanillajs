@@ -231,6 +231,7 @@ class Example {
             case 'sum':
                 const sum = this.result.reduce((curr, sum) => curr + sum, 0);
                 this.result = [sum];
+                break;
             case 'reset':
                 this.result = this.createArray(this.currentInputValue);
                 this.changeClass(this.functionButtons, 'example-block-item', 'remove');
