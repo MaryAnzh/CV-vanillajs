@@ -7,10 +7,16 @@ class Example {
     shuffleArrayButton = null;
     numberListVeiw = null;
     messageVlew = null;
+    functionButtons = null;
 
-    navList = [
-        '  ',
-    ];
+    currentInputValue = 0;
+
+    arrayFunctions = {
+        sort: ['to max', 'to min'],
+        filter: ['even', 'odd'],
+        reduce: ['sum'],
+        reset: ['reset'],
+    };
 
     result = [];
 
@@ -28,13 +34,13 @@ class Example {
             </p>
             <ul class="example__view__list"></ul>
           </div>
-           ${this.formView()}
-        <div class="example__nav">
-            <ul class="example__nav__list"></ul>
+           ${this.formRender()}
+        <div class="example__fun">
+            <ul class="example__fun__list"></ul>
         </div>
     </div>`;
         this.frame.innerHTML = viewExample;
-        this.renderNavList();
+        this.functionsArrayRender();
     }
 
     afteRender() {
@@ -45,12 +51,14 @@ class Example {
         this.numberListVeiw = document.querySelector('.example__view__list');
         this.messageVlew = document.querySelector('.example__view__text');
         this.deleteArrayButton = document.querySelector('.example__form__buttons__delete');
+        this.functionButtons = document.querySelectorAll('.example__fun__list__list-item__buttons__button');
 
         this.formInput.addEventListener('focus', () => this.createArrayButton.classList.remove('example-block-item'));
         this.form.addEventListener('submit', (e) => this.submit(e));
+        this.functionButtons.forEach((button) => button.addEventListener('click', (e) => this.changeArrayOnClick(e)));
     }
 
-    formView() {
+    formRender() {
         const form = `
         <form class="example__form">
         <input class="example__form__input"
@@ -85,15 +93,32 @@ class Example {
         return form;
     }
 
-    renderNavList() {
-        const exampleNav = document.querySelector('.example__nav__list');
-        this.navList.forEach((list) => {
-            const li = document.createElement('li');
-            li.classList.add('example__nav__list__list-item');
-            li.textContent = list;
+    functionsButtonsRender(array) {
+        return array.reduce((prev, curr) => {
+            const data = curr.split(' ');
+            return prev + `<button 
+          class="example__fun__list__list-item__buttons__button example-block-item"
+          data-type="${data.join('')}">
+            ${curr}
+        </button>`;
+        }, ``)
+    };
 
-            exampleNav.appendChild(li);
-        });
+    functionsArrayRender() {
+        const functionsButtonsList = document.querySelector('.example__fun__list');
+        for (let list in this.arrayFunctions) {
+            const li = document.createElement('li');
+            li.classList.add('example__fun__list__list-item');
+            li.textContent = list;
+            const view = `
+            <p class="example__fun__list__list-item__title">${list}:</p>
+            <ul class="example__fun__list__list-item__buttons">
+              ${this.functionsButtonsRender(this.arrayFunctions[list])}
+            </ul>
+            `;
+            li.innerHTML = view;
+            functionsButtonsList.appendChild(li);
+        };
     }
 
     renderViewArray(array) {
@@ -114,8 +139,13 @@ class Example {
         return array;
     }
 
-    removeClass(nodes, className) {
-        nodes.forEach((node) => node.classList.remove(className));
+    changeClass(nodes, className, type) {
+        if (type === 'remove') {
+            nodes.forEach((node) => node.classList.remove(className));
+        }
+        if (type === 'add') {
+            nodes.forEach((node) => node.classList.add(className));
+        }
     }
 
     removeAllChild(element) {
@@ -128,6 +158,14 @@ class Example {
         array.sort(() => Math.random() - 0.5);
     }
 
+    toMax(array) {
+        array.sort((a, b) => a - b);
+    }
+
+    toMin(array) {
+        array.sort((a, b) => b - a);
+    }
+
     submit(e) {
         e.preventDefault();
         const submitter = e.submitter;
@@ -137,6 +175,7 @@ class Example {
             this.formInput.classList.add('example-block-item');
             this.deleteArrayButton.classList.remove('example-block-item');
             this.shuffleArrayButton.classList.remove('example-block-item');
+            this.changeClass(this.functionButtons, 'example-block-item', 'remove'); submitter.classList.add('example-block-item');
             submitter.classList.add('example-block-item');
             this.messageVlew.style.display = 'none';
             this.numberListVeiw.style.display = 'flex';
@@ -145,19 +184,21 @@ class Example {
             this.formInput.blur();
             this.result = this.createArray(value);
             this.renderViewArray(this.result);
+            this.currentInputValue = value;
         }
 
         if (submitterType === 'delete') {
             this.formInput.classList.remove('example-block-item');
             this.createArrayButton.classList.add('example-block-item');
             this.shuffleArrayButton.classList.add('example-block-item');
-            submitter.classList.add('example-block-item');
+            this.changeClass(this.functionButtons, 'example-block-item', 'add'); submitter.classList.add('example-block-item');
             this.messageVlew.style.display = 'block';
             this.numberListVeiw.style.display = 'none';
             this.formInput.value = '';
 
             this.result = [];
             this.removeAllChild(this.numberListVeiw);
+            this.currentInputValue = 0;
         }
 
         if (submitterType === 'shuffle') {
@@ -165,6 +206,48 @@ class Example {
             this.removeAllChild(this.numberListVeiw);
             this.renderViewArray(this.result);
         }
+    }
+
+    changeArrayOnClick(e) {
+        const button = e.target;
+        const type = button.dataset.type;
+
+        switch (type) {
+
+            case 'tomax':
+                this.toMax(this.result);
+                break;
+            case 'tomin':
+                this.toMin(this.result);
+                break;
+            case 'even':
+                const even = this.result.filter((num) => num % 2 === 0);
+                this.result = even;
+                break;
+            case 'odd':
+                const odd = this.result.filter((num) => num % 2 !== 0);
+                this.result = odd;
+                break;
+            case 'sum':
+                const sum = this.result.reduce((curr, sum) => curr + sum, 0);
+                this.result = [sum];
+            case 'reset':
+                this.result = this.createArray(this.currentInputValue);
+                this.changeClass(this.functionButtons, 'example-block-item', 'remove');
+                break;
+            default:
+                break;
+        }
+        this.removeAllChild(this.numberListVeiw);
+        if (this.result.length === 0) {
+            this.result.push(`No result`);
+            this.functionButtons.forEach((button) => {
+                if (button.dataset.type !== 'reset') {
+                    button.classList.add('example-block-item');
+                }
+            })
+        }
+        this.renderViewArray(this.result);
     }
 }
 
