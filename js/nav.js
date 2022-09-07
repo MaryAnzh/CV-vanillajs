@@ -1,5 +1,6 @@
 class Nav {
     nav = document.querySelector('#nav');
+
     navList = [
         'about',
         'skill',
@@ -9,7 +10,19 @@ class Nav {
         'languages'
     ];
 
-    constructor() { }
+    constructor() {
+        this.render();
+        this.afterRender();
+    }
+
+    render() {
+        this.createNavList();
+    }
+
+    afterRender() {
+        window.addEventListener('scroll', (e) => this.scroll(e));
+
+    }
 
     createNavList() {
         this.navList.forEach((elem) => {
@@ -34,6 +47,3 @@ class Nav {
 }
 
 const nav = new Nav();
-nav.createNavList();
-
-window.addEventListener('scroll', (e) => nav.scroll(e));

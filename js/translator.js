@@ -8,9 +8,20 @@ class Translator {
     lang = 'en';
     listItemForTranslate = document.querySelectorAll('.translator');
     dictionary = dictionary;
-    langRadioElem = document.querySelectorAll('.cv__header__wrap__languages__language');
+    langCheckBoxes = document.querySelectorAll('.cv__header__top__lang__check-box');
+    langRadioElem = document.querySelectorAll('.cv__main__main-info__languages__language');
 
-    constructor() { }
+    constructor() {
+        this.render();
+        this.afterRender();
+        ;
+    }
+
+    render() { }
+
+    afterRender() {
+        this.langCheckBoxes.forEach((checkBox) => checkBox.addEventListener('click', (e) => this.changeLanguageOnClick(e)));
+    }
 
     translate() {
         this.listItemForTranslate.forEach(element => {
@@ -23,15 +34,12 @@ class Translator {
     changeLanguageOnClick(e) {
         const elem = e.target;
         this.lang = elem.dataset.lang;
-        this.langRadioElem.forEach(elem => elem.classList.remove('active'));
-        elem.classList.add('active');
+        this.langCheckBoxes.forEach(el => el.style.backgroundImage = 'none');
+        elem.style.backgroundImage = 'url(/assets/icons/point.svg)';
         this.translate();
     }
 }
 
 const translator = new Translator();
-
-enElem.addEventListener('click', (e) => translator.changeLanguageOnClick(e));
-ruElem.addEventListener('click', (e) => translator.changeLanguageOnClick(e));
 
 translator.translate();

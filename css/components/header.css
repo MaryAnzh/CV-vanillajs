@@ -1,78 +1,42 @@
 .cv__header {
+    width: 100vh;
+    margin-top: 30px;
+}
+
+.cv__header__top {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 80px;
-    height: fit-content;
+    height: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 0 20px;
-    background: linear-gradient(to left, var(--gradientLight), var(--gradientDark));
+    background: var(--mainColorDark);
 }
 
-.cv__header__wrap {
-    max-width: 1120px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.cv__header__wrap__icon {
-    width: 230px;
-    display: flex;
-    align-items: center;
-}
-
-.cv__header__wrap__icon svg {
-    width: 72px;
-    height: 42px;
-    fill: var(--mainColor);
-    cursor: pointer;
-    transition: .5s;
-}
-
-.cv__header__wrap__icon svg:hover {
-    fill: #ffffff;
-
-}
-
-.cv__header__wrap__icon__name {
-    padding-left: 10px;
-    line-height: 1.1;
-    font-size: 22px;
-    color: #ffffff;
-}
-
-.cv__header__wrap__languages {
-    width: 36px;
-    height: 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.cv__header__wrap__languages__language {
-    width: 30px;
+.cv__header__top__lang {
+    width: 80px;
     height: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid var(--mainColor);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.cv__header__wrap__languages__language:hover {
-    border-color: var(--mainColorDark)2;
-    color: blue;
-}
-
-.active {
-    background: var(--mainColorDark2);
-    opacity: 1;
-    pointer-events: none;
+    justify-content: space-between;
     color: #ffffff;
+}
+
+.cv__header__top__lang__check-box {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    background-image: url(../../assets/icons/point.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5px;
+
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cv__header__top__lang__check-box:nth-child(4) {
+    background-image: none;
 }
