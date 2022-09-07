@@ -81,7 +81,19 @@ const dictionary = {
         TITLE: {
             en: 'skill',
             ru: 'навыки',
-        }
+        },
+        WEB: {
+            en: 'WEB',
+            ru: 'ВЕБ',
+        },
+        LANGUAGES: {
+            en: `languages / frameworks`,
+            ru: 'языки/фреймворки',
+        },
+        UTILE: {
+            en: 'utile',
+            ru: 'полезное',
+        },
     },
     PROJECTS: {
         TITLE: {
