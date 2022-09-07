@@ -1,3 +1,7 @@
+.cv__main__about {
+    background: var(--mainColorLight);
+}
+
 .cv__main__about__wrap {
     max-width: 1200px;
     width: 100%;

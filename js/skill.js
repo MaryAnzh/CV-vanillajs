@@ -1,48 +1,70 @@
+import { webIcon, progIcon, utillIcon } from './svg.js';
+
 class Skill {
-    list = document.querySelector('.cv__main__skill__wrap__lists__texst-list');
-    iconList = document.querySelector('.cv__main__skill__wrap__lists__icons-list');
+    wrap = document.querySelector('.cv__main__skill__wrap');
+    webIcon = webIcon;
+    progIcon = progIcon;
+    utillIcon = utillIcon;
 
-    skillList = [
-        'JavaScript, TypeScript',
-        'HTML, CSS, SCSS, BEM',
-        'Angular',
-        'git',
-        'WebPack',
-        'Adobe Illustrator',
+    skillCards = [
+        {
+            icon: this.webIcon,
+            title: 'WEB',
+            skill: ['HTML', 'CSS', 'SCSS', 'BEM'],
+            skillIcons: ['html.png', 'css.png', 'scss.png',]
+        },
+        {
+            icon: this.progIcon,
+            title: 'LANGUAGES',
+            skill: ['JavaScript', 'TypeScript', 'Angular'],
+            skillIcons: ['js.png', 'ts.png', 'angular.png'],
+        },
+        {
+            icon: this.utillIcon,
+            title: 'UTILE',
+            skill: ['git', 'WebPack', 'Adobe Illustrator'],
+            skillIcons: ['git.png', 'webpack.png', 'AI.png'],
+        },
     ];
-    skillIcons = [
-        'js.png',
-        'ts.png',
-        'html.png',
-        'css.png',
-        'scss.png',
-        'angular.svg',
-        'git.png',
-        'webpack.png',
-        'AI.png'
-    ];
 
-    constructor() { }
-
-    createSkillList() {
-        this.skillList.forEach((elem) => {
-            const li = document.createElement('li');
-            li.textContent = elem;
-            this.list.appendChild(li);
-        });
+    constructor() {
+        this.render();
+        this.aftetRander();
     }
 
-    createIconList() {
-        this.skillIcons.forEach((elem) => {
-            const img = document.createElement('img');
-            img.setAttribute('src', `assets/icons/${elem}`);
-            img.setAttribute('alt', `${elem.split('.')[0]}`);
-            img.classList.add('cv__main__skill__wrap__lists__icons-list__icon');
-            this.iconList.appendChild(img);
-        });
+    render() {
+
+        const view = this.skillCards.reduce((prev, card) => {
+            prev += `
+          <div class="cv__main__skill__wrap__card">
+            <div class="cv__main__skill__wrap__card__icon">${card.icon}</div>
+            
+            <div class="translator
+              cv__main__skill__wrap__card__title"
+              data-translat="SKILL.${card.title}">
+            </div>
+
+            <p class="cv__main__skill__wrap__card__info">${card.skill.join(', ')}</p>
+            <div class="cv__main__skill__wrap__card__skill-icons">${this.createSkillIcons(card.skillIcons)}</div>
+          </div>`;
+            return prev;
+        }, ``);
+
+        this.wrap.innerHTML = view;
+    }
+
+    aftetRander() { }
+
+    createSkillIcons(arr) {
+        return arr.reduce((prev, icon) => {
+            prev += `
+            <img 
+            class="cv__main__skill__wrap__card__skill-icons__icon"
+            src="assets/icons/${icon}"
+            alt="${icon.split('.')[0]}">`;
+            return prev;
+        }, ``);
     }
 }
 
-const skill = new Skill;
-skill.createSkillList();
-skill.createIconList();
+const skill = new Skill();
