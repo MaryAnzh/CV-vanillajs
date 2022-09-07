@@ -1,7 +1,7 @@
 :root {
     --mainColor: #B1DCFA;
     --mainColorDark2: #84c1ec;
-    --mainColorDark: #5C2A2A;
+    --mainColorDark: #2b2b2b;
     --mainColorFont: #3C3EA3;
     --mainColorLight: #C5E6FC;
     --mainColorLight2: #D4ECFC;
@@ -14,7 +14,7 @@
     --additionalColorLight: #D8D9FD;
     --additionalDark: #3C3EA3;
 
-    --contrastColor: #BFAC93;
+    --contrastColor: #fcaf3b;
     --contrastColorDark: #A67639;
     --contrastColorLight: #FFE5C4;
     --contrastColorLight2: #FFECD3;
