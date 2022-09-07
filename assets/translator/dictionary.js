@@ -15,7 +15,7 @@ const dictionary = {
             ru: 'обо мне',
         },
         SKILL: {
-            en: 'skill',
+            en: 'skills',
             ru: 'навыки',
         },
         PROJECTS: {
@@ -79,7 +79,7 @@ const dictionary = {
     },
     SKILL: {
         TITLE: {
-            en: 'skill',
+            en: 'skills',
             ru: 'навыки',
         },
         WEB: {
@@ -91,8 +91,8 @@ const dictionary = {
             ru: 'языки / фреймворки',
         },
         UTILE: {
-            en: 'utile',
-            ru: 'полезное',
+            en: 'tools',
+            ru: 'инструменты',
         },
     },
     PROJECTS: {
