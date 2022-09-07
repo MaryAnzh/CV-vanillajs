@@ -88,7 +88,7 @@ const dictionary = {
         },
         LANGUAGES: {
             en: `languages / frameworks`,
-            ru: 'языки/фреймворки',
+            ru: 'языки / фреймворки',
         },
         UTILE: {
             en: 'utile',
