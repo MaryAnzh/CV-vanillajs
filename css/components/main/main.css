@@ -6,10 +6,10 @@
 @import 'education.css';
 @import 'code-example.css';
 @import 'browser-frame.css';
+@import 'main-info.css';
 
 .cv__main {
     width: 100%;
-    padding: 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,10 +22,6 @@ section {
     display: flex;
     justify-content: center;
     padding: 30px 20px;
-}
-
-section:nth-child(2n) {
-    background: var(--mainColorLight2);
 }
 
 section h3 {

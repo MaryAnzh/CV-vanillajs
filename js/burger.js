@@ -28,7 +28,7 @@ class Burger {
         this.navList.forEach((elem) => {
             const li = document.createElement('li');
             const a = document.createElement('a');
-            li.classList.add('translator', 'cv__nav__listitem__item');
+            li.classList.add('translator', 'cv__nav__burger-list__list__item');
             li.setAttribute('data-translat', `NAV.${elem.toUpperCase()}`);
             a.setAttribute('href', `#${elem}`);
             a.appendChild(li);
@@ -37,7 +37,7 @@ class Burger {
         this.burgerList_HTMLElem.appendChild(this.navListUl_HTMLElem);
     }
 
-    ooenBurger() {
+    openBurger() {
         this.burgerIcon_HTMLElrm.style.borderRadius = '50%';
         this.burgerLines_HTMLNodes[1].style.opacity = '0';
         this.burgerLines_HTMLNodes[0].style.top = '21.5px';
@@ -61,7 +61,7 @@ class Burger {
 
     burgerOnClick(e) {
         if (!this.isBurgerOpen) {
-            this.ooenBurger();
+            this.openBurger();
 
         } else {
             this.closeBurger();
@@ -78,7 +78,7 @@ class Burger {
 
     scroll(e) {
         const position = window.scrollY;
-        if (position > 0) {
+        if (position > 400) {
             this.burgerIcon_HTMLElrm.classList.add('sticky-burger');
             this.burgerList_HTMLElem.classList.add('sticky-burge-list');
         } else {
