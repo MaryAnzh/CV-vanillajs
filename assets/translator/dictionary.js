@@ -37,8 +37,8 @@ const dictionary = {
     },
     MAIN: {
         ABOUT_ME: {
-            en: 'Briefly About Myself:',
-            ru: 'Кратко о себе:'
+            en: 'About Myself:',
+            ru: 'О себе:'
         },
     },
     CONTACTS: {

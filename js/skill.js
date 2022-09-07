@@ -8,7 +8,7 @@ class Skill {
         'Angular',
         'git',
         'WebPack',
-        'Adobe Illustrato',
+        'Adobe Illustrator',
     ];
     skillIcons = [
         'js.png',

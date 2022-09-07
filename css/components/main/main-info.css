@@ -15,6 +15,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .cv__main__main-info_wrap__logo__icon {

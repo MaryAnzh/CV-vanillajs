@@ -104,7 +104,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background: var(--mainColorDark);
+    background: url(../../../assets/img/background_600.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .example__view {

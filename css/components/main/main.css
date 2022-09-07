@@ -24,10 +24,6 @@ section {
     padding: 30px 20px;
 }
 
-section:nth-child(2n) {
-    background: var(--mainColorLight2);
-}
-
 section h3 {
     font-weight: bold;
     font-size: 36px;
