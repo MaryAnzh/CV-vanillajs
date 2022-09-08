@@ -67,5 +67,7 @@ h4 {
     left: 0;
     background: rgba(128, 128, 128, 0.3);
     overflow: hidden;
+    opacity: 0;
+    transition: .3s;
     z-index: 10;
 }

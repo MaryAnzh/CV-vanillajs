@@ -1,5 +1,10 @@
 class Contacts {
-    contactsWrap = document.querySelector('.cv__main__main-info__contacts__info');
+    popUpContacts = document.querySelector('.contacts-pop-up');
+    contactsWrap = document.querySelector('.cv__main__main-info__contacts');
+    contactsInfoWrap = document.querySelector('.cv__main__main-info__contacts__info');
+    showContactsButton = document.querySelector('.cv__main__main-infoinfo__buttons__contacts');
+    closeContactsBurron = document.querySelector('.cv__main__main-info__contacts__header__back');
+
 
     myContacts = {
         phone: '+375297023851',
@@ -13,42 +18,67 @@ class Contacts {
 
     constructor() {
         this.render();
+        this.afterRender();
     }
 
     render() {
-        const view = ``;
-        for(let key in this.myContacts) {
-            if(typeof key === 'string') {
-                return view + `
+        let view = ``;
+        const ul = document.createElement('ul');
+        ul.classList.add('contacts');
+        for (let key in this.myContacts) {
+            if (typeof this.myContacts[key] === 'string') {
+                view += `
                 <li class="contacts__Item">
-                <p class="translator
-                contacts__Item__title"
-                data-translate=""></p>
-                <ul><ul>
+                  <p class="contacts__Item__title">
+                    <span class="translator"
+                      data-translate="CONTACTS.${key.toUpperCase()}"></span>: </p>
+                  <p>${this.myContacts[key]}</p>
+                </li>`;
+            } else {
+                view += `
+                <li class="contacts__Item">
+                  <p class="contacts__Item__title">
+                    <span class="translator"
+                      data-translate="CONTACTS.${key.toUpperCase()}"></span>: </p>
+                  <ul class="contacts__Item__list">
+                  ${this.createContactsList(this.myContacts[key])}
+                  <ul>
                 </li>`;
             }
         };
+        ul.innerHTML = view;
+        this.contactsInfoWrap.appendChild(ul);
     }
 
-    // creqteCards() {
-    //     this.myContacts.forEach((elem, index) => {
-    //         const card = document.createElement('div');
-    //         card.classList.add('cv__main__contacts__wrap__cards-wrap__card');
-    //         const title = document.createElement('h5');
-    //         title.classList.add('cv__main__contacts__wrap__cards-wrap__card__title', 'translator');
-    //         title.setAttribute('data-translate', `CONTACTS.${elem.toUpperCase()} `);
-    //         card.appendChild(title);
+    afterRender() {
+        this.showContactsButton.addEventListener('click', (e) => this.showContactsOnClick(e));
+        this.closeContactsBurron.addEventListener('click', (e) => this.closeContactsOnClick(e));
+        this.popUpContacts.addEventListener('click', (e) => this.closeContactsOnClick(e));
+    }
 
-    //         this.contactsinfo[elem].forEach((el) => {
-    //             const contacte = document.createElement('p');
-    //             const arrayFromString = el.split('');
-    //             const contacteСover = arrayFromString.reduce((prev, curr) => prev + `< span > ${curr}</span > `, ``);
-    //             contacte.innerHTML = contacteСover;
-    //             card.appendChild(contacte);
-    //         });
-    //         this.contactsElement.appendChild(card);
-    //     });
-    // }
+    createContactsList(contactsSet) {
+        let view = ``;
+        for (let key in contactsSet) {
+            view += `
+            <li class="contacts__Item__list__messenger">
+            <p class="contacts__Item__list__messenger__name"><span>${key}:</span>  ${contactsSet[key]}</p>
+            </li>`;
+        }
+        return view;
+    }
+
+    showContactsOnClick(e) {
+        this.popUpContacts.style.display = 'block';
+        this.popUpContacts.style.opacity = '1';
+        setTimeout(() => this.contactsWrap.style.transform = 'translateX(0%)', 50);
+
+    }
+
+    closeContactsOnClick(e) {
+        this.contactsWrap.style.transform = 'translateX(-110%)';
+        this.popUpContacts.style.opacity = '0';
+        setTimeout(() => this.popUpContacts.style.display = 'none', 300);
+    }
 }
 
 const contacts = new Contacts();

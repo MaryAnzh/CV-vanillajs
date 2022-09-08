@@ -6,7 +6,7 @@ class Example {
     deleteArrayButton = null;
     shuffleArrayButton = null;
     numberListVeiw = null;
-    messageVlew = null;
+    messengeVlew = null;
     functionButtons = null;
 
     currentInputValue = 0;
@@ -49,7 +49,7 @@ class Example {
         this.createArrayButton = document.querySelector('.example__form__buttons__create');
         this.shuffleArrayButton = document.querySelector('.example__form__buttons__shuffle');
         this.numberListVeiw = document.querySelector('.example__view__list');
-        this.messageVlew = document.querySelector('.example__view__text');
+        this.messengeVlew = document.querySelector('.example__view__text');
         this.deleteArrayButton = document.querySelector('.example__form__buttons__delete');
         this.functionButtons = document.querySelectorAll('.example__fun__list__list-item__buttons__button');
 
@@ -177,7 +177,7 @@ class Example {
             this.shuffleArrayButton.classList.remove('example-block-item');
             this.changeClass(this.functionButtons, 'example-block-item', 'remove'); submitter.classList.add('example-block-item');
             submitter.classList.add('example-block-item');
-            this.messageVlew.style.display = 'none';
+            this.messengeVlew.style.display = 'none';
             this.numberListVeiw.style.display = 'flex';
 
             const value = +(this.formInput.value);
@@ -192,7 +192,7 @@ class Example {
             this.createArrayButton.classList.add('example-block-item');
             this.shuffleArrayButton.classList.add('example-block-item');
             this.changeClass(this.functionButtons, 'example-block-item', 'add'); submitter.classList.add('example-block-item');
-            this.messageVlew.style.display = 'block';
+            this.messengeVlew.style.display = 'block';
             this.numberListVeiw.style.display = 'none';
             this.formInput.value = '';
 

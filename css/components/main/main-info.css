@@ -72,6 +72,7 @@
 
 .cv__main__main-infoinfo__buttons__angular-cv {
     background: var(--mainColorDark);
+    opacity: 0;
     color: #ffffff;
 }
 

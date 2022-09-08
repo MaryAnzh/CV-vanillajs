@@ -1,15 +1,60 @@
+.contacts-pop-up {
+    display: none;
+}
+
 .cv__main__main-info__contacts {
     position: absolute;
     top: 3vh;
     left: 0;
     width: 320px;
     height: 70vh;
-    padding: 20px;
-    padding-left: 40px;
+    padding: 0 40px;
     border-radius: 6px;
     background: white;
+    transform: translateX(-110%);
+    transition: .3s;
+    z-index: 10;
 }
 
-.cv__main__main-info__contacts h3 {
-    text-align: right;
+.cv__main__main-info__contacts__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cv__main__main-info__contacts__header__back {
+    height: fit-content;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 40px;
+    color: var(--mainColorDark2);
+    transition: .3s;
+}
+
+.cv__main__main-info__contacts__header__back:hover {
+    color: var(--mainColoront);
+}
+
+.contacts__Item {
+    margin-top: 10px;
+}
+
+.contacts__Item__title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contacts__Item__title::first-letter {
+    text-transform: uppercase;
+}
+
+.contacts__Item__list__messenger__name span {
+    font-weight: bold;
+}
+
+.contacts__Item__list__messenger__name::first-letter {
+    text-transform: uppercase;
+
 }
