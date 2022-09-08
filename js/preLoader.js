@@ -1,16 +1,18 @@
 class PreLoader {
     preloaderHTML = document.querySelector('.cv__preloader-wrap');
     round = document.querySelector('.cv__preloader-wrap__photo');
+    animation = null;
 
     constructor() {
         this.render();
+        window.addEventListener('load', (e) => preLoader.onLoad(e));
     }
 
     render() {
         const ballLine = document.createElement('ul');
         ballLine.classList.add('ball-line');
 
-        const addBallOnRound = (itemCount, radius) => {
+        const addBallOnRound = (itemCount, radius, interval) => {
             // центр окружности
             const xCenter = 145;
             const yCenter = 145;
@@ -27,12 +29,31 @@ class PreLoader {
 
                 fairyLight.style.marginTop = `${x}px`;
                 fairyLight.style.marginLeft = `${y}px`;
-                setTimeout(() => ballLine.appendChild(fairyLight), index * 30);
+                setTimeout(() => ballLine.appendChild(fairyLight), index * interval);
 
             }
             this.round.appendChild(ballLine);
         }
-        addBallOnRound(30, 130);
+
+        const ballCount = 30;
+        const preloaderRadius = 130;
+        const interval = 30;
+        const allRoundTime = ballCount * interval;
+
+        addBallOnRound(ballCount, preloaderRadius, interval);
+        setTimeout(() => {
+            const balls = document.querySelectorAll('.ball-line li');
+            balls.forEach((elem, index) => setTimeout(() => elem.remove(), (index * 30)));
+        }, allRoundTime);
+
+        this.animation = setInterval(() => {
+            addBallOnRound(ballCount, preloaderRadius, interval);
+            setTimeout(() => {
+                const balls = document.querySelectorAll('.ball-line li');
+                balls.forEach((elem, index) => setTimeout(() => elem.remove(), (index * 30)));
+            }, allRoundTime);
+        }, (allRoundTime * 2));
+
     }
 
 
@@ -42,10 +63,10 @@ class PreLoader {
             this.preloaderHTML.style.opacity = '0';
         }, 500);
         setTimeout(() => {
-            this.preloaderHTML.style.display = 'none';;
+            this.preloaderHTML.style.display = 'none';
+            //clearInterval(this.animation);
         }, 800);
     }
 }
 
 const preLoader = new PreLoader();
-window.addEventListener('load', (e) => preLoader.onLoad(e));

@@ -1,5 +1,6 @@
 "use strict";
 
+import './js/preLoader.js';
 import './js/nav.js';
 import './js/contacts.js';
 import './js/burger.js';
@@ -11,4 +12,3 @@ import './js/codeExample.js';
 import './js/browserFrame.js';
 import './js/example.js';
 import './js/translator.js';
-import './js/preLoader.js';
