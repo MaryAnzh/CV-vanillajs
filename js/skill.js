@@ -41,7 +41,7 @@ class Skill {
             
             <div class="translator
               cv__main__skill__wrap__card__title"
-              data-translat="SKILL.${card.title}">
+              data-translate="SKILL.${card.title}">
             </div>
 
             <p class="cv__main__skill__wrap__card__info">${card.skill.join(', ')}</p>

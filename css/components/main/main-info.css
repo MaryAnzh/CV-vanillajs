@@ -9,14 +9,17 @@
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: multiply;
 }
 
 .cv__main__main-info__wrap {
     max-width: 1200px;
     width: 100%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .cv__main__main-info_wrap__logo__icon {
@@ -45,6 +48,34 @@
     font-size: 20px;
     color: #ffffff;
 }
+
+.cv__main__main-info__buttons {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv__main__main-infoinfo__buttons__contacts,
+.cv__main__main-infoinfo__buttons__angular-cv {
+    width: 160px;
+    height: 50px;
+    text-transform: uppercase;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cv__main__main-infoinfo__buttons__contacts {
+    background: var(--contrastColor);
+}
+
+.cv__main__main-infoinfo__buttons__angular-cv {
+    background: var(--mainColorDark);
+    opacity: 0;
+    color: #ffffff;
+}
+
 
 @media (max-width=450px) {
     .cv__main__main-info_wrap__logo__icon__name {

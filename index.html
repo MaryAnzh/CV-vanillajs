@@ -65,8 +65,8 @@
 								</path>
 							</svg>
 							<div class="cv__main__main-info_wrap__logo__icon__name">
-								<h3 class="translator" data-translat="HEADER.NAME"></h3>
-								<h3 class="translator" data-translat="HEADER.SURNAME"></h3>
+								<h3 class="translator" data-translate="HEADER.NAME"></h3>
+								<h3 class="translator" data-translate="HEADER.SURNAME"></h3>
 							</div>
 						</div>
 					</div>
@@ -81,25 +81,36 @@
 						</div>
 						<div class="cv__nav__burger-list"></div>
 					</nav>
+					<div class="cv__main__main-info__buttons">
+						<button class="translator cv__main__main-infoinfo__buttons__contacts"
+							data-translate="CONTACTS.TITLE"></button>
+						<button class="cv__main__main-infoinfo__buttons__angular-cv">
+							CV Angular
+						</button>
+					</div>
 
 					<!-- Contacts -->
-					<div class="cv__main__contacts">
-						<div class="cv__main__contacts__wrap">
-							<h3 class="translator cv__main__contacts__wrap__title"
-								data-translat="CONTACTS.TITLE">
-							</h3>
-							<div class="cv__main__contacts__wrap__cards-wrap" id="contacts"></div>
+					<div class="pop-up contacts-pop-up">
+						<div class="cv__main__main-info__contacts">
+							<div class="cv__main__main-info__contacts__header">
+								<button class="cv__main__main-info__contacts__header__back">🠔</button>
+								<h3 class="translator cv__main__main-info__contacts__header__title"
+									data-translate="CONTACTS.TITLE">
+								</h3>
+							</div>
+
+							<div class="cv__main__main-info__contacts__info"></div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- skill -->
+			<!-- skills -->
 			<section
 				id="skill"
 				class="cv__main__skill">
 				<h3 class="translator"
-					data-translat="SKILL.TITLE">
+					data-translate="SKILL.TITLE">
 				</h3>
 				<div class="cv__main__skill__wrap"></div>
 			</section>
@@ -110,7 +121,7 @@
 				class="cv__main__about">
 				<div class="cv__main__about__wrap">
 					<h3 class="translator"
-						data-translat="MAIN.ABOUT_ME">
+						data-translate="MAIN.ABOUT_ME">
 					</h3>
 					<article class="cv__main__about__me">
 						<img
@@ -128,7 +139,7 @@
 				class="cv__main__projects">
 				<div class="cv__main__projects__wrap">
 					<h3 class="translator"
-						data-translat="PROJECTS.TITLE">
+						data-translate="PROJECTS.TITLE">
 					</h3>
 
 					<!-- slider -->
@@ -148,7 +159,7 @@
 					<!-- projects list -->
 					<div class="cv__main__projects__wrap__list-wrap">
 						<h4 class="translator"
-							data-translat="PROJECTS.LIST">
+							data-translate="PROJECTS.LIST">
 						</h4>
 						<ul class="cv__main__projects__wrap__list-wrap__list"></ul>
 					</div>
@@ -161,14 +172,14 @@
 				class="cv__main__code">
 				<div class="cv__main__code__wrap">
 					<h3 class="translator"
-						data-translat="CODE.TITLE">
+						data-translate="CODE.TITLE">
 					</h3>
 					<p class="translator cv__main__code__wrap__description"
-						data-translat="CODE.TEXT"></p>
+						data-translate="CODE.TEXT"></p>
 					<div class="cv__main__code__wrap__examples"></div>
 					<div class="cv__main__code__wrap__result">
 						<h3 class="translator"
-							data-translat="CODE.RESULT"></h3>
+							data-translate="CODE.RESULT"></h3>
 						<div class="cv__main__code__wrap__result__browser"></div>
 					</div>
 				</div>
@@ -180,7 +191,7 @@
 				class="cv__main__education">
 				<div class="cv__main__education__wrap">
 					<h3 class="translator"
-						data-translat="EDUCATION.TITLE">
+						data-translate="EDUCATION.TITLE">
 					</h3>
 
 					<div class="cv__main__education__wrap__info">
@@ -189,23 +200,23 @@
 								viewBox="0 0 230 247.6">
 							</svg>
 							<p class="translator"
-								data-translat="EDUCATION.HIGHER"></p>
+								data-translate="EDUCATION.HIGHER"></p>
 						</div>
 						<div class="cv__main__education__wrap__info__university">
 							<h4 class="translator"
-								data-translat="EDUCATION.UNIVERSITY"></h4>
+								data-translate="EDUCATION.UNIVERSITY"></h4>
 							<p class="translator"
-								data-translat="EDUCATION.BSU"></p>
+								data-translate="EDUCATION.BSU"></p>
 							<p class="translator cv__main__education__wrap__info__university__type"
-								data-translat="EDUCATION.SPECIALTY_TITLE"></p>
+								data-translate="EDUCATION.SPECIALTY_TITLE"></p>
 							<p class="translator"
-								data-translat="EDUCATION.SPECIALTY"></p>
+								data-translate="EDUCATION.SPECIALTY"></p>
 							<p class="translator cv__main__education__wrap__info__university__type"
-								data-translat="EDUCATION.QUALIFICATION_TITLE"></p>
+								data-translate="EDUCATION.QUALIFICATION_TITLE"></p>
 							<p class="translator"
-								data-translat="EDUCATION.QUALIFICATION"></p>
+								data-translate="EDUCATION.QUALIFICATION"></p>
 							<p class="translator cv__main__education__wrap__info__university__type"
-								data-translat="EDUCATION.DATE"></p>
+								data-translate="EDUCATION.DATE"></p>
 							<p>15/05/2021</p>
 
 						</div>
@@ -215,7 +226,7 @@
 					<div class="cv__main__education__wrap__info">
 						<div class="cv__main__education__wrap__info__course">
 							<h4 class="translator"
-								data-translat="EDUCATION.COURSES"></h4>
+								data-translate="EDUCATION.COURSES"></h4>
 							<h5>RS School</h5>
 							<div class="cv__main__education__wrap__info__course__course-info"></div>
 						</div>
@@ -232,18 +243,18 @@
 				class="cv__main__languages">
 				<div class="cv__main__languages__wrap">
 					<h3 class="translator"
-						data-translat="LANGUAGES.TITLE">
+						data-translate="LANGUAGES.TITLE">
 					</h3>
 					<div class="cv__main__languages__wrap__info">
 						<dov class="cv__main__languages__wrap__info__lang">
 							<p class="translator"
-								data-translat="LANGUAGES.RU"></p>
+								data-translate="LANGUAGES.RU"></p>
 							<p class="translator"
-								data-translat="LANGUAGES.NATIVE"></p>
+								data-translate="LANGUAGES.NATIVE"></p>
 						</dov>
 						<dov class="cv__main__languages__wrap__info__lang">
 							<p class="translator"
-								data-translat="LANGUAGES.EN"></p>
+								data-translate="LANGUAGES.EN"></p>
 							<p>A2</p>
 						</dov>
 					</div>

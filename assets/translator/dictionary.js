@@ -43,8 +43,8 @@ const dictionary = {
     },
     CONTACTS: {
         TITLE: {
-            en: 'contacts (Belarus, Minsk)',
-            ru: 'Контакты (Беларусь, Минск)'
+            en: 'contacts',
+            ru: 'Контакты'
         },
         PHONE: {
             en: 'phone',
