@@ -38,7 +38,7 @@ class Nav {
 
     scroll(e) {
         const position = window.scrollY;
-        if (position >= 100) {
+        if (position >= 300) {
             this.nav.classList.add('sticky-menu');
         } else {
             this.nav.classList.remove('sticky-menu');
