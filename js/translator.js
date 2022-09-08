@@ -1,15 +1,11 @@
-//Класс перевода приложения
 import dictionary from "../assets/translator/dictionary.js";
 
-const enElem = document.querySelector('#en');
-const ruElem = document.querySelector('#ru');
-
 class Translator {
-    lang = 'en';
     listItemForTranslate = document.querySelectorAll('.translator');
     dictionary = dictionary;
-    langCheckBoxes = document.querySelectorAll('.cv__header__top__lang__check-box');
-    langRadioElem = document.querySelectorAll('.cv__main__main-info__languages__language');
+
+    checkBoxes = document.querySelectorAll('.cv__header__top__lang__check-box');
+    checkers = document.querySelectorAll('.cv__header__top__lang__check-box__check');
 
     constructor() {
         this.render();
@@ -20,26 +16,35 @@ class Translator {
     render() { }
 
     afterRender() {
-        this.langCheckBoxes.forEach((checkBox) => checkBox.addEventListener('click', (e) => this.changeLanguageOnClick(e)));
+        const lang = 'en';
+        this.selectLang(lang)
+        this.translate(lang);
+        this.checkBoxes.forEach((checkBox) => checkBox.addEventListener('click', (e) => this.changeLanguageOnClick(e)));
     }
 
-    translate() {
+    translate(lang) {
         this.listItemForTranslate.forEach(element => {
             const translateKey = (element.dataset.translate).split('.');
-            const elemText = this.dictionary[translateKey[0]][translateKey[1]][this.lang];
+            const elemText = this.dictionary[translateKey[0]][translateKey[1]][lang];
             element.textContent = elemText;
         });
     }
 
     changeLanguageOnClick(e) {
         const elem = e.target;
-        this.lang = elem.dataset.lang;
-        this.langCheckBoxes.forEach(el => el.style.backgroundImage = 'none');
-        elem.style.backgroundImage = 'url(/assets/icons/point.svg)';
-        this.translate();
+        const lang = elem.dataset.lang;
+        this.checkers.forEach((el) => el.style.display = 'none');
+
+        this.selectLang(lang);
+        this.translate(lang);
+    }
+
+    selectLang(lang) {
+        const arr = Array.from(this.checkers);
+        const chackerArr = arr.filter(elem => elem.dataset.lang === lang);
+        const chacker = chackerArr[0];
+        chacker.style.display = 'block';
     }
 }
 
 const translator = new Translator();
-
-translator.translate();
