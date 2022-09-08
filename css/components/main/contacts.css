@@ -1,13 +1,15 @@
-.cv__main__contacts {
-    max-width: 1200px;
-    width: 100%;
-    justify-content: end;
+.cv__main__main-info__contacts {
+    position: absolute;
+    top: 3vh;
+    left: 0;
+    width: 320px;
+    height: 70vh;
+    padding: 20px;
+    padding-left: 40px;
+    border-radius: 6px;
+    background: white;
 }
 
-.cv__main__contacts__wrap {
-    color: #ffffff;
-}
-
-.cv__main__contacts__wrap__cards-wrap__card__title::first-letter {
-    text-transform: uppercase;
+.cv__main__main-info__contacts h3 {
+    text-align: right;
 }

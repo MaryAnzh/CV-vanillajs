@@ -25,7 +25,7 @@ class Translator {
 
     translate() {
         this.listItemForTranslate.forEach(element => {
-            const translateKey = (element.dataset.translat).split('.');
+            const translateKey = (element.dataset.translate).split('.');
             const elemText = this.dictionary[translateKey[0]][translateKey[1]][this.lang];
             element.textContent = elemText;
         });

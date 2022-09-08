@@ -29,7 +29,7 @@ class Nav {
             const li = document.createElement('li');
             const a = document.createElement('a');
             li.classList.add('translator', 'cv__nav__listitem__item');
-            li.setAttribute('data-translat', `NAV.${elem.toUpperCase()}`);
+            li.setAttribute('data-translate', `NAV.${elem.toUpperCase()}`);
             a.setAttribute('href', `#${elem}`);
             a.appendChild(li);
             this.nav.appendChild(a);
