@@ -24,6 +24,7 @@
 }
 
 .cv__main__projects__wrap__body__list-wrap {
+    min-width: 300px;
     width: 50%;
 }
 
@@ -178,6 +179,12 @@
 @media (max-width: 1150px) {
     .cv__main__projects__wrap__slider-wrap__slider__item {
         width: 100%;
+    }
+
+    .cv__main__projects__wrap__body__list-wrap {
+        width: 100%;
+        padding-left: 15px;
+        transition: .3s;
     }
 }
 
