@@ -3,7 +3,7 @@
 }
 
 .cv__main__main-info__contacts {
-    position: absolute;
+    position: fixed;
     top: 3vh;
     left: 0;
     width: 320px;
