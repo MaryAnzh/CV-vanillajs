@@ -1,5 +1,8 @@
 class Nav {
     nav = document.querySelector('#nav');
+    navWrap = document.querySelector('.cv__nav');
+    isMenuSticky = false;
+    count = 0;
 
     navList = [
         'about',
@@ -21,6 +24,7 @@ class Nav {
 
     afterRender() {
         window.addEventListener('scroll', (e) => this.scroll(e));
+        this.nav.addEventListener('scroll', (e) => console.log(e));
 
     }
 
@@ -37,11 +41,22 @@ class Nav {
     }
 
     scroll(e) {
-        const position = window.scrollY;
-        if (position >= 330) {
-            this.nav.classList.add('sticky-menu');
+        const position = this.navWrap.getBoundingClientRect();
+
+        if (position.top <= 0) {
+            console.log(`${this.count++}. Позиция липкого: ${position.top}`);
+            if (!this.isMenuSticky) {
+                console.log('Ура, меню прилипло');
+                this.nav.classList.add('sticky-menu');
+                this.isMenuSticky = true;
+            }
         } else {
-            this.nav.classList.remove('sticky-menu');
+            console.log(`${this.count++}. Позиция: ${position.top}`);
+            if (this.isMenuSticky) {
+                console.log('Отлипли');
+                this.nav.classList.remove('sticky-menu');
+                this.isMenuSticky = false;
+            }
         }
     }
 }
