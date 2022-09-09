@@ -44,16 +44,12 @@ class Nav {
         const position = this.navWrap.getBoundingClientRect();
 
         if (position.top <= 0) {
-            console.log(`${this.count++}. Позиция липкого: ${position.top}`);
             if (!this.isMenuSticky) {
-                console.log('Ура, меню прилипло');
                 this.nav.classList.add('sticky-menu');
                 this.isMenuSticky = true;
             }
         } else {
-            console.log(`${this.count++}. Позиция: ${position.top}`);
             if (this.isMenuSticky) {
-                console.log('Отлипли');
                 this.nav.classList.remove('sticky-menu');
                 this.isMenuSticky = false;
             }
