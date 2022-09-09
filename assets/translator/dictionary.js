@@ -36,10 +36,6 @@ const dictionary = {
         }
     },
     MAIN: {
-        ABOUT_ME: {
-            en: 'About Myself:',
-            ru: 'О себе:'
-        },
     },
     CONTACTS: {
         TITLE: {
@@ -60,6 +56,10 @@ const dictionary = {
         },
     },
     ABOUT_ME: {
+        TITLE: {
+            en: 'About me:',
+            ru: 'О себе:'
+        },
         TEXT1: {
             en: 'Hi, my name is Mari, I am from Belarus, Minsk',
             ru: 'Привет, меня зовут Мари. Я из Беларуси, Минск',
