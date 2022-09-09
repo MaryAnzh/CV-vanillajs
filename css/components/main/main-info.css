@@ -23,10 +23,11 @@
 }
 
 .cv__main__main-info_wrap__logo__icon {
-    min-width: 360px;
+
     width: 100%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .cv__main__main-info_wrap__logo__icon__svg {
@@ -44,6 +45,7 @@
 .cv__main__main-info_wrap__logo__icon__name {
     padding-left: 10px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     font-size: 20px;
     color: #ffffff;

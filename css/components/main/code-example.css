@@ -250,7 +250,7 @@
 
 @media (max-width: 500px) {
     .cv__main__code__wrap__examples__code-example {
-        min-width: 320px;
+        min-width: 300px;
         width: 100%;
         overflow: scroll;
     }
