@@ -50,12 +50,8 @@
     border-right: 1px solid var(--mainColorDark);
 }
 
-.cv__main__code__wrap__examples__code-example__nav__item:nth-child(3) {
-    border-right: 1px solid var(--mainColorDark);
-}
-
 .active-item {
-    background: var(--contrastColorLight);
+    background: var(--contrastColor);
     pointer-events: none;
 }
 
@@ -159,7 +155,7 @@
 }
 
 .example__form__input:invalid {
-    background-color: var(--mainColorLight);
+    background-color: var(--contrastColorLight);
 }
 
 .example__form__buttons__create,

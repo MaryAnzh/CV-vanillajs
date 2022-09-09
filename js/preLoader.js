@@ -56,8 +56,17 @@ class PreLoader {
 
     }
 
+    clearHasn() {
+        const hash = window.location.hash;
+        if (hash !== '') {
+            history.pushState("", document.title, window.location.pathname);
+        } else {
+            console.log(`We havn't hash`);
+        }
+    }
 
     onLoad(e) {
+        this.clearHasn();
         setTimeout(() => {
             this.preloaderHTML.style.transition = '.3s';
             this.preloaderHTML.style.opacity = '0';
