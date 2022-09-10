@@ -21,39 +21,41 @@ class Burger {
     constructor() {
         this.render();
         this.afterRender();
-
     }
 
     render() {
-        this.navListUl = document.createElement('ul');
-        this.navListUl.classList.add('cv__nav__burger-list__list');
+        const view = `
+        <ul class="cv__nav__burger-list__list">
+          ${this.createburgerListUl()}
+        </ul>`;
+
+        this.burgerList.innerHTML = view;
     }
 
     afterRender() {
+        this.navListUl = document.querySelector('.cv__nav__burger-list__list');
         this.burgerLines = this.burgerIcon.children;
     }
 
-
     createburgerListUl() {
-        this.navList.forEach((elem) => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            li.classList.add('translator', 'cv__nav__burger-list__list__item');
-            li.setAttribute('data-translate', `NAV.${elem.toUpperCase()}`);
-            a.setAttribute('href', `#${elem}`);
-            a.appendChild(li);
-            this.navListUl.appendChild(a);
-        });
-        this.burgerList.appendChild(this.navListUl);
+        return this.navList.reduce((prev, item) => {
+            return prev + `
+            <a href="#${item}">
+              <li class="translator cv__nav__burger-list__list__item"
+              data-translate="NAV.${item.toUpperCase()}">
+              </li>
+            </a>`;
+        }, ``);
     }
 
     openBurger() {
         this.burgerIcon.style.borderRadius = '50%';
         this.burgerLines[1].style.opacity = '0';
-        this.burgerLines[0].style.top = '21.5px';
+        this.burgerLines[0].style.top = 'calc(50% - 1.5px)';
         this.burgerLines[0].style.transform = 'rotate(.125turn)';
-        this.burgerLines[2].style.bottom = '21.5px';
+        this.burgerLines[2].style.bottom = 'calc(50% - 1.5px)';
         this.burgerLines[2].style.transform = 'rotate(-.125turn)';
+
         this.navListUl.style.transform = 'translate(0px, 0px)';
         this.isBurgerOpen = true;
     }
@@ -65,7 +67,7 @@ class Burger {
         this.burgerLines[0].style.transform = 'rotate(0)';
         this.burgerLines[2].style.bottom = '8px';
         this.burgerLines[2].style.transform = 'rotate(0)';
-        this.navListUl.style.transform = 'translate(0px, -190px)';
+        this.navListUl.style.transform = 'translate(0px, -230px)';
         this.isBurgerOpen = false;
     }
 

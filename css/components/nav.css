@@ -129,7 +129,7 @@
     .cv__nav__burger-list {
         position: fixed;
         width: 120px;
-        height: 190px;
+        height: 220px;
         display: block;
         margin-top: 50px;
         overflow: hidden;
@@ -139,7 +139,7 @@
 
     .cv__nav__burger-list__list {
         display: block;
-        transform: translate(0px, -190px);
+        transform: translate(0px, -230px);
         border-radius: 8px;
         background: var(--mainColorDark);
         transition: .3s;
@@ -152,7 +152,12 @@
         text-align: center;
         text-transform: uppercase;
         cursor: pointer;
-        transition: .3s;
+        transition: .5s;
+    }
+
+    .cv__nav__burger-list__list__item:hover {
+        background: var(--contrastColor);
+        color: var(--mainColorDark);
     }
 
 }
