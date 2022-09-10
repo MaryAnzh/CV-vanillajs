@@ -3,6 +3,7 @@ class Burger {
     burgerIcon = document.querySelector('#burger');
     burgerList = document.querySelector('.cv__nav__burger-list');
     burgerLines = [];
+    isMenuSticky = false;
 
     navList = [
         'home',
@@ -89,19 +90,27 @@ class Burger {
     }
 
     scroll(e) {
-        const position = window.scrollY;
-        if (position > 400) {
-            this.burgerIcon.classList.add('sticky-burger');
-            this.burgerList.classList.add('sticky-burge-list');
+        const position = this.navWrap.getBoundingClientRect();
+
+        if (position.top <= 0) {
+            if (!this.isMenuSticky) {
+                console.log("Stickt on");
+                this.burgerIcon.classList.add('sticky-burger');
+                this.burgerList.classList.add('sticky-burge-list');
+                this.isMenuSticky = true;
+            }
         } else {
-            this.burgerIcon.classList.remove('sticky-burger');
-            this.burgerList.classList.remove('sticky-burge-list');
+            if (this.isMenuSticky) {
+                this.burgerIcon.classList.remove('sticky-burger');
+                this.burgerList.classList.remove('sticky-burge-list');
+                this.isMenuSticky = false;
+            }
         }
     }
 }
 
 const burger = new Burger();
-burger.createburgerListUl();
+//burger.createburgerListUl();
 
 burger.burgerIcon.addEventListener('click', (e) => burger.burgerOnClick(e));
 window.addEventListener('click', (e) => burger.click(e));
