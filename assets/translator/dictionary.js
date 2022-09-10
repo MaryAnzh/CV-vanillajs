@@ -10,6 +10,10 @@ const dictionary = {
         }
     },
     NAV: {
+        HOME: {
+            en: 'home',
+            ru: 'вверх'
+        },
         ABOUT: {
             en: 'about',
             ru: 'обо мне',

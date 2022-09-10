@@ -1,61 +1,73 @@
 class Burger {
+    navWrap = document.querySelector('.cv__nav');
+    burgerIcon = document.querySelector('#burger');
+    burgerList = document.querySelector('.cv__nav__burger-list');
+    burgerLines = [];
 
-    burgerIcon_HTMLElrm = document.querySelector('#burger');
-    burgerList_HTMLElem = document.querySelector('.cv__nav__burger-list');
-    burgerLines_HTMLNodes = [];
-
-    navList = [];
+    navList = [
+        'home',
+        'about',
+        'skill',
+        'projects',
+        'code',
+        'education',
+        'languages'
+    ];
 
     isBurgerOpen = false;
 
-    navListUl_HTMLElem;
+    navListUl;
 
     constructor() {
-        this.burgerLines_HTMLNodes = this.burgerIcon_HTMLElrm.children;
-        this.navList = [
-            'about',
-            'skill',
-            'projects',
-            'code',
-            'education',
-            'languages'
-        ];
-        this.navListUl_HTMLElem = document.createElement('ul');
-        this.navListUl_HTMLElem.classList.add('cv__nav__burger-list__list');
+        this.render();
+        this.afterRender();
     }
 
-    createburgerList_HTMLElemUl() {
-        this.navList.forEach((elem) => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            li.classList.add('translator', 'cv__nav__burger-list__list__item');
-            li.setAttribute('data-translate', `NAV.${elem.toUpperCase()}`);
-            a.setAttribute('href', `#${elem}`);
-            a.appendChild(li);
-            this.navListUl_HTMLElem.appendChild(a);
-        });
-        this.burgerList_HTMLElem.appendChild(this.navListUl_HTMLElem);
+    render() {
+        const view = `
+        <ul class="cv__nav__burger-list__list">
+          ${this.createburgerListUl()}
+        </ul>`;
+
+        this.burgerList.innerHTML = view;
+    }
+
+    afterRender() {
+        this.navListUl = document.querySelector('.cv__nav__burger-list__list');
+        this.burgerLines = this.burgerIcon.children;
+    }
+
+    createburgerListUl() {
+        return this.navList.reduce((prev, item) => {
+            return prev + `
+            <a href="#${item}">
+              <li class="translator cv__nav__burger-list__list__item"
+              data-translate="NAV.${item.toUpperCase()}">
+              </li>
+            </a>`;
+        }, ``);
     }
 
     openBurger() {
-        this.burgerIcon_HTMLElrm.style.borderRadius = '50%';
-        this.burgerLines_HTMLNodes[1].style.opacity = '0';
-        this.burgerLines_HTMLNodes[0].style.top = '21.5px';
-        this.burgerLines_HTMLNodes[0].style.transform = 'rotate(.125turn)';
-        this.burgerLines_HTMLNodes[2].style.bottom = '21.5px';
-        this.burgerLines_HTMLNodes[2].style.transform = 'rotate(-.125turn)';
-        this.navListUl_HTMLElem.style.transform = 'translate(0px, 0px)';
+        this.burgerIcon.style.borderRadius = '50%';
+        this.burgerLines[1].style.opacity = '0';
+        this.burgerLines[0].style.top = 'calc(50% - 1.5px)';
+        this.burgerLines[0].style.transform = 'rotate(.125turn)';
+        this.burgerLines[2].style.bottom = 'calc(50% - 1.5px)';
+        this.burgerLines[2].style.transform = 'rotate(-.125turn)';
+
+        this.navListUl.style.transform = 'translate(0px, 0px)';
         this.isBurgerOpen = true;
     }
 
     closeBurger() {
-        this.burgerIcon_HTMLElrm.style.borderRadius = '2px';
-        this.burgerLines_HTMLNodes[1].style.opacity = '1';
-        this.burgerLines_HTMLNodes[0].style.top = '8px';
-        this.burgerLines_HTMLNodes[0].style.transform = 'rotate(0)';
-        this.burgerLines_HTMLNodes[2].style.bottom = '8px';
-        this.burgerLines_HTMLNodes[2].style.transform = 'rotate(0)';
-        this.navListUl_HTMLElem.style.transform = 'translate(0px, -190px)';
+        this.burgerIcon.style.borderRadius = '2px';
+        this.burgerLines[1].style.opacity = '1';
+        this.burgerLines[0].style.top = '8px';
+        this.burgerLines[0].style.transform = 'rotate(0)';
+        this.burgerLines[2].style.bottom = '8px';
+        this.burgerLines[2].style.transform = 'rotate(0)';
+        this.navListUl.style.transform = 'translate(0px, -230px)';
         this.isBurgerOpen = false;
     }
 
@@ -79,18 +91,18 @@ class Burger {
     scroll(e) {
         const position = window.scrollY;
         if (position > 400) {
-            this.burgerIcon_HTMLElrm.classList.add('sticky-burger');
-            this.burgerList_HTMLElem.classList.add('sticky-burge-list');
+            this.burgerIcon.classList.add('sticky-burger');
+            this.burgerList.classList.add('sticky-burge-list');
         } else {
-            this.burgerIcon_HTMLElrm.classList.remove('sticky-burger');
-            this.burgerList_HTMLElem.classList.remove('sticky-burge-list');
+            this.burgerIcon.classList.remove('sticky-burger');
+            this.burgerList.classList.remove('sticky-burge-list');
         }
     }
 }
 
 const burger = new Burger();
-burger.createburgerList_HTMLElemUl();
+burger.createburgerListUl();
 
-burger.burgerIcon_HTMLElrm.addEventListener('click', (e) => burger.burgerOnClick(e));
+burger.burgerIcon.addEventListener('click', (e) => burger.burgerOnClick(e));
 window.addEventListener('click', (e) => burger.click(e));
 window.addEventListener('scroll', (e) => burger.scroll(e));

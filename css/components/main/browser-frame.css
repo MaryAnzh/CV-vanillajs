@@ -89,7 +89,7 @@
 .frame__header__icons__icon__open {
     width: 10px;
     height: 10px;
-    position: relative;
+    position: absolute;
     transform: translate(0px, -2px);
     border: 1px solid var(--mainColorDark);
 }
