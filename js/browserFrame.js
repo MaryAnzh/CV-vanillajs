@@ -24,7 +24,7 @@ class BrowserFrame {
           +
         </div>
         <div class="frame__header__icons">
-          <div class="frame__header__icons__icon line">
+          <div class="frame__header__icons__icon">
             <div class="frame__header__icons__icon__line"></div>
           </div>
           <div class="frame__header__icons__icon">
