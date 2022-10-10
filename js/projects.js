@@ -9,7 +9,7 @@ class Projects {
         {
             name: 'project-management-app-individual (Angular)',
             src: 'project-management-app-2.png',
-            urlDeploy: 'maryanzh.github.io/angular-project-management-app-individual/',
+            urlDeploy: 'https://maryanzh.github.io/angular-project-management-app-individual/',
             urlRepo: 'https://github.com/MaryAnzh/angular-project-management-app-individual',
         },
         {
